@@ -10,14 +10,6 @@
       />
       <el-button @click="addData()">增加数据</el-button>
       <h3>Function类型</h3>
-      <t-chart
-        :options="options"
-        :isEmpty="isEmptyFn"
-        image="/t-ui-plus/img/hero.jpg"
-        :image-size="400"
-        description="empty 组件的描述信息"
-        style="width: 100%; height: 500px"
-      />
       <h3>空状态插槽</h3>
       <t-chart
         :options="options"

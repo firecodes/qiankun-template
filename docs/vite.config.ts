@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [vueJsx(), vueSetupExtend()],
   server: {
     host: '0.0.0.0',
-    port: 2222,
+    port: 6666,
     open: true,
     https: false,
   },
