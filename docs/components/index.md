@@ -2,16 +2,16 @@
 
 ::: tip 提示
 
-@wocwin/t-ui-plus 基于 vue3 + ts + Element-plus 再次封装的基础组件
+@wocwin/ui-components-plus 基于 vue3 + ts + Element-plus 再次封装的基础组件
 
 :::
 
 ### 安装
 
 ```bash:no-line-numbers
-npm install @wocwin/t-ui-plus -S
+npm install @wocwin/ui-components-plus -S
 &
-pnpm add @wocwin/t-ui-plus -S
+pnpm add @wocwin/ui-components-plus -S
 ```
 
 
@@ -20,20 +20,20 @@ pnpm add @wocwin/t-ui-plus -S
 
 ```js
 // main.ts
-import TuiPlus from '@wocwin/t-ui-plus'
-import '@wocwin/t-ui-plus/lib/style.css'
+import TuiPlus from '@wocwin/ui-components-plus'
+import '@wocwin/ui-components-plus/lib/style.css'
 const app = createApp(App)
 app.use(TuiPlus)
 app.mount('#app')
 ```
 
-### T-ui-plus组件 Volar 类型提示
+### ui-components-plus组件 Volar 类型提示
 
 ```js
 // 需要在使用的项目的tsconfig.json文件中添加以下
 compilerOptions：{
   "types": [
-      "@wocwin/t-ui-plus/components.d.ts",
+      "@wocwin/ui-components-plus/components.d.ts",
     ],
 }
 

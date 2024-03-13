@@ -1,17 +1,17 @@
 ---
 layout: home
 
-title: T-ui-plus
+title: ui-components-plus
 # titleTemplate: 选项卡描述
 editLink: true
 lastUpdated: true
 hero:
-  name: T-ui-plus
+  name: ui-components-plus
   text: vue3基础组件
   tagline: Vue3 中基于Element-plus二次封装基础组件文档
   image:
     src: /img/hero.jpg
-    alt: t-ui-plus
+    alt: ui-components-plus
   actions:
     - theme: brand
       text: 安装指南

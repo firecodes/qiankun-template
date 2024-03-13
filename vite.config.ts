@@ -21,8 +21,6 @@ import {
   transformerVariantGroup,
 } from 'unocss'
 
-const pathSrc = path.resolve(__dirname, 'src')
-
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -99,7 +97,7 @@ export default defineConfig({
   resolve: {
     // 配置别名
     alias: {
-      '~/': `${pathSrc}/`,
+      '~/': `${path.resolve(__dirname, 'src')}/`,
       '@': resolve(__dirname, 'packages'),
     },
     // 类型： string[] 导入时想要省略的扩展名列表。
