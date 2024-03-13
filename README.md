@@ -1,6 +1,5 @@
 
-> 基于 Element-plus 二次封装基础组件地址
-
+> 基于 Element-plus components
 
 <img src="./README_GIF/live.png" width=170>
 
@@ -12,10 +11,10 @@ npm install -g pnpm
 pnpm install
 
 
-## 本地运行 vuepress 中组件文档
 
 
-## 微信交流群
+## 参考资料
+1. https://github.com/wocwin/t-ui-plus（element plus ui）
 
 
 ## Git 提交规范
