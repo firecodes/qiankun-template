@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { RouterLink, RouterView } from 'vue-router'
-import { toggleDark } from "@composables";
+import { toggleDark } from "@/composables";
 </script>
 
 <template>
