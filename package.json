@@ -20,7 +20,6 @@
     "build:app1": "cd app1 && npm run build",
     "build:app2": "cd app2 && npm run build",
     "build:sub-html": "cd sub-html && npm run build",
-    "build:main": "cd main && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

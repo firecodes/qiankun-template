@@ -4,10 +4,9 @@
     <div class="flex main-container">
       <BaseSide />
       <div w="full" py="4">
-        <div class="content">
-          <RouterView />
-          <div id="vue3"></div>
-        </div>
+        <!-- 渲染节点 -->
+        <div id="container" />
+        <RouterView />
       </div>
     </div>
   </el-config-provider>
