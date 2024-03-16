@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { RouterLink, RouterView } from 'vue-router'
-import { toggleDark } from "~/composables";
+import { toggleDark } from "@composables";
 </script>
 
 <template>
   <el-menu class="el-menu-demo" mode="horizontal">
     <el-menu-item index="1">Element Plus</el-menu-item>
     <el-sub-menu index="2">
-      <template #title>Home Router</template>
+      <template #title>Qiankun Main Router</template>
       <el-menu-item index="2-1">
         <RouterLink to="/home">Home</RouterLink>
       </el-menu-item>
@@ -16,7 +16,7 @@ import { toggleDark } from "~/composables";
       </el-menu-item>
     </el-sub-menu>
     <el-sub-menu index="3">
-      <template #title>Sub Router</template>
+      <template #title>Qiankun Sub Router</template>
       <el-menu-item index="3-1">
         <RouterLink to="/app1">app1</RouterLink>
       </el-menu-item>
@@ -32,3 +32,8 @@ import { toggleDark } from "~/composables";
     </el-menu-item>
   </el-menu>
 </template>
+<style>
+.ep-menu a {
+  width: 100%;
+}
+</style>
