@@ -4,31 +4,31 @@ const apps: any[] = [
   //   name: "app1", // 应用的名字
   //   entry: "http://localhost:9001/", // 默认加载这个html，解析里面的js动态的执行（子应用必须支持跨域，内部使用的是 fetch）
   //   container: "#container", // 要渲染到的节点id，对应上一步中src/App.vue中的渲染节点
-  //   activeRule: "/apps/app1"
+  //   activeRule: "/apps/app1/"
   // },
   // {
   //   name: "app2",
   //   entry: "http://localhost:9002/",
   //   container: "#container",
-  //   activeRule: "/apps/app2"
+  //   activeRule: "/apps/app2/"
   // },
   {
     name: "sub-html",
     entry: "http://localhost:9003/",
     container: "#container",
-    activeRule: "/apps/sub-html"
+    activeRule: "/apps/sub-html/"
   },
   // {
   //   name: "sub-react",
   //   entry: "http://localhost:9004/",
   //   container: "#container",
-  //   activeRule: "/apps/sub-react"
+  //   activeRule: "/apps/sub-react/"
   // },
   {
     name: "sub-vue",
     entry: "http://localhost:9005/",
     container: "#container",
-    activeRule: "/apps/sub-vue"
+    activeRule: "/apps/sub-vue/"
   },
 ];
 

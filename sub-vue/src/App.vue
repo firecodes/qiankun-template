@@ -1,17 +1,16 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
   <div>
     <div class="header">
-      <RouterLink to="/">home</RouterLink>
-      <RouterLink to="/content">content</RouterLink>
+      <RouterLink to="./">HelloWorld</RouterLink>
+      <RouterLink class="ml-10" to="./home">home</RouterLink>
+      <RouterLink class="ml-10" to="./content">content</RouterLink>
     </div>
-
     <RouterView />
-    <h1>2222222222222222</h1>
+    <h2>666666666666</h2>
   </div>
 </template>
 
@@ -19,6 +18,11 @@ import HelloWorld from './components/HelloWorld.vue'
 header {
   line-height: 1.5;
   max-height: 100vh;
+}
+
+
+.ml-10 {
+  margin-left: 10px;
 }
 
 .logo {
