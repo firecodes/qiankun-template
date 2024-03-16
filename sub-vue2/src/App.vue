@@ -5,7 +5,7 @@
       <router-link to="/about">About</router-link>
     </div>
     <div>
-      <p>当前处于<code>{{ isInQiankun ? 'qiankun' : '独立运行'}}</code>环境</p>
+      <p>当前处于<code>{{ isInQiankun ? 'qiankun' : '独立运行' }}</code>环境</p>
       <p>vuex的`global module`的user state：<code> {{ JSON.stringify(user) }}</code></p>
     </div>
     <div class="btns">
@@ -15,7 +15,7 @@
       </template>
       <button @click="changeUsername">改变全局的用户名称</button>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -27,23 +27,22 @@ export default {
     ...mapState('global', {
       user: state => state.user
     }),
-    isInQiankun () {
+    isInQiankun() {
       return window.__POWERED_BY_QIANKUN__
     }
   },
   methods: {
-    // setGlobalState 是在 /common/src/store/global-register.js中定义的
     ...mapActions('global', ['setGlobalState']),
-    gotoSubReact () {
+    gotoSubReact() {
       history.pushState(null, 'sub-react', '/sub-react')
     },
-    changeUsername () {
+    changeUsername() {
       // 也可通过 store.commit('global/setGlobalState', { user: '李四' }) 进行操作
       this.setGlobalState({
         user: { name: '李四' + Math.round(Math.random() * 100) }
       })
     },
-    openSubVue () {
+    openSubVue() {
       if (!this.isInQiankun) {
         alert('当前已经是单独运行的子应用')
         return
@@ -78,11 +77,11 @@ export default {
   color: #42b983;
 }
 
-.btns{
+.btns {
   margin: 100px;
 }
-.btns button{
+
+.btns button {
   margin: 0 10px;
 }
-
 </style>

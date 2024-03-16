@@ -1,5 +1,5 @@
 {
-  "name": "sub-vue",
+  "name": "sub-vue2",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,6 @@
     "start": "npm run serve"
   },
   "dependencies": {
-    "common": "file:../common",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
