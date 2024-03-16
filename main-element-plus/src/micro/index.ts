@@ -13,10 +13,10 @@ const apps: any[] = [
     activeRule: "/apps/app2"
   },
   {
-    name: "app3",
+    name: "sub-html",
     entry: "http://localhost:9003/",
     container: "#container",
-    activeRule: "/apps/app3"
+    activeRule: "/apps/sub-html"
   },
 ];
 

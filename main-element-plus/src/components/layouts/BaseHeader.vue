@@ -18,13 +18,13 @@ import { toggleDark } from "@/composables";
     <el-sub-menu index="3">
       <template #title>Qiankun Sub APP</template>
       <el-menu-item index="3-1">
-        <RouterLink to="/app1">app1</RouterLink>
+        <RouterLink to="/apps/app1">app1</RouterLink>
       </el-menu-item>
       <el-menu-item index="3-2">
-        <RouterLink to="/app2">app2</RouterLink>
+        <RouterLink to="/apps/app2">app2</RouterLink>
       </el-menu-item>
       <el-menu-item index="3-3">
-        <RouterLink to="/app1">sub-html</RouterLink>
+        <RouterLink to="/apps/sub-html">sub-html</RouterLink>
       </el-menu-item>
       <el-menu-item index="3-4">
         <RouterLink to="/app2">sub-react</RouterLink>
