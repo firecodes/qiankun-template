@@ -1,14 +1,19 @@
 # element-plus-vite-starter
 
-> A starter kit for Element Plus with Vite
-
-- Preview: <https://vite-starter.element-plus.org>
-
-This is an example of on-demand element-plus with [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components).
-
-> If you want to import all, it may be so simple that no examples are needed. Just follow [quickstart | Docs](https://element-plus.org/zh-CN/guide/quickstart.html) and import them.
-
-If you just want an on-demand import example `manually`, you can check [unplugin-element-plus/examples/vite](https://github.com/element-plus/unplugin-element-plus/tree/main/examples/vite).
+    "install": "npm-run-all --serial install:*",
+    "install:sub-vue": "cd sub-vue && npm i",
+    "install:sub-react": "cd sub-react && npm i",
+    "install:sub-html": "cd sub-html && npm i",
+    "start": "npm-run-all --parallel start:*",
+    "start:sub-react": "cd sub-react && npm start",
+    "start:sub-vue": "cd sub-vue && npm start",
+    "start:sub-html": "cd sub-html && npm start",
+    "build": "npm-run-all build:* && bash ./scripts/bundle.sh",
+    "build:sub-react": "cd sub-react && npm run build",
+    "build:sub-vue": "cd sub-vue && npm run build",
+    "build:sub-html": "cd sub-html && npm run build",
+    "build:main": "cd main && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"",
 
 ## Project setup
 
