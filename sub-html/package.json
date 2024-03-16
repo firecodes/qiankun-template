@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cross-env PUBLIC_PATH=/ http-server ./ -p 7799 --cors",
+    "start": "cross-env PUBLIC_PATH=/ http-server ./ -p 9003 --cors",
     "build": "bash ./scripts/build.sh"
   },
   "author": "fengxianqi",
