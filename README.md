@@ -1,8 +1,23 @@
 # qiankun-example
-
-qiankun 实战 demo，父应用 vue，子应用使用 `react`, `vue` 和 `原生HTML`。
-
-[微前端qiankun从搭建到部署的实践](https://juejin.im/post/6875462470593904653)
+    "install": "npm-run-all --serial install:*",
+    "install:app1": "cd app1 && npm i",
+    "install:app2": "cd app2 && npm i",
+    "install:sub-html": "cd sub-html && npm i",
+    "install:sub-vue": "cd sub-vue && npm i",
+    "install:sub-react": "cd sub-react && npm i",
+    "start": "npm-run-all --parallel start:*",
+    "start:app1": "cd app1 && npm run dev",
+    "start:app2": "cd app2 && npm run dev",
+    "start:sub-html": "cd sub-html && npm start",
+    "start:sub-react": "cd sub-react && npm start",
+    "start:sub-vue": "cd sub-vue && npm start",
+    "build": "npm-run-all build:* && bash ./scripts/bundle.sh",
+    "build:app1": "cd app1 && npm run build",
+    "build:app2": "cd app2 && npm run build",
+    "build:sub-html": "cd sub-html && npm run build",
+    "build:sub-react": "cd sub-react && npm run build",
+    "build:sub-vue": "cd sub-vue && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
 
 ## 开始
 安装根目录工程依赖
