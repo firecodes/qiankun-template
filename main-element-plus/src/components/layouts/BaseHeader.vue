@@ -32,6 +32,15 @@ import { toggleDark } from "@/composables";
       <el-menu-item index="3-5">
         <RouterLink to="/apps/sub-vue/">sub-vue</RouterLink>
       </el-menu-item>
+      <el-menu-item index="3-6">
+        <RouterLink to="/apps/demo-react/">emo-react</RouterLink>
+      </el-menu-item>
+      <el-menu-item index="3-7">
+        <RouterLink to="/apps/demo-vue2/">demo-vue2</RouterLink>
+      </el-menu-item>
+      <el-menu-item index="3-8">
+        <RouterLink to="/apps/demo-vue3/">demo-vue3</RouterLink>
+      </el-menu-item>
     </el-sub-menu>
     <el-menu-item index="4" disabled>Info</el-menu-item>
     <el-menu-item h="full" @click="toggleDark()">

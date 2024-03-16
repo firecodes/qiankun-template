@@ -1,64 +1,53 @@
-import { registerMicroApps, start } from "qiankun";
-const apps: any[] = [
-  // {
-  //   name: "app1", // 应用的名字
-  //   entry: "http://localhost:9001/", // 默认加载这个html，解析里面的js动态的执行（子应用必须支持跨域，内部使用的是 fetch）
-  //   container: "#container", // 要渲染到的节点id，对应上一步中src/App.vue中的渲染节点
-  //   activeRule: "/apps/app1/"
-  // },
-  // {
-  //   name: "app2",
-  //   entry: "http://localhost:9002/",
-  //   container: "#container",
-  //   activeRule: "/apps/app2/"
-  // },
-  {
-    name: "sub-html",
-    entry: "http://localhost:9003/",
-    container: "#container",
-    activeRule: "/apps/sub-html/"
-  },
-  // {
-  //   name: "sub-react",
-  //   entry: "http://localhost:9004/",
-  //   container: "#container",
-  //   activeRule: "/apps/sub-react/"
-  // },
-  {
-    name: "sub-vue",
-    entry: "http://localhost:9005/",
-    container: "#container",
-    activeRule: "/apps/sub-vue/"
-  },
-];
+import NProgress from "nprogress";
+import { addGlobalUncaughtErrorHandler, registerMicroApps, start } from "qiankun";
+import apps from "./apps";
 
+/**
+ * 注册微应用
+ * 第一个参数 - 微应用的注册信息
+ * 第二个参数 - 全局生命周期钩子
+ */
 function registerApps() {
   try {
     registerMicroApps(apps, {
-      beforeLoad: [
-        app => {
-          console.log('before load', app)
-        }
-      ],
-      beforeMount: [
-        app => {
-          console.log('before mount', app)
-        }
-      ],
-      afterUnmount: [
-        app => {
-          console.log('after unmount', app)
-        }
-      ]
-    }); // 注册应用
-    start({
-      prefetch: 'all', // 预加载
-      sandbox: {
-        //experimentalStyleIsolation: true, //   开启沙箱模式,实验性方案
+      // qiankun 生命周期钩子 - 微应用加载前
+      beforeLoad: (app: any) => {
+        // 加载微应用前，加载进度条
+        NProgress.start();
+        console.log("before load", app.name);
+        return Promise.resolve();
       },
-    }); // 开启应用
+      // qiankun 生命周期钩子 - 微应用加载前
+      beforeMount: (app: any) => {
+        // 加载微应用前，加载进度条
+        console.log('before mount', app)
+        return Promise.resolve();
+      },
+      // qiankun 生命周期钩子 - 微应用挂载后
+      afterMount: (app: any) => {
+        // 加载微应用前，进度条加载完成
+        NProgress.done();
+        console.log("after mount", app.name);
+        return Promise.resolve();
+      }
+    });
+    start({ prefetch: true, sandbox: { strictStyleIsolation: true } });
+    // start({
+    //   prefetch: 'all', // 预加载
+    //   sandbox: {
+    //     //experimentalStyleIsolation: true, //   开启沙箱模式,实验性方案
+    //   },
+    // });
   } catch (err) {
     console.log(err)
   }
 }
+
+/**
+ * 添加全局的未捕获异常处理器
+ */
+addGlobalUncaughtErrorHandler((event: Event | string) => {
+  console.error(event);
+});
+
 export default registerApps

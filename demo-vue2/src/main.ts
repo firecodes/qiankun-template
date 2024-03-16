@@ -13,10 +13,10 @@ function render(props = {}) {
   const { container } = props as any;
   router = new VueRouter({
     // histroy模式的路由需要设置base，app-history-vue根据项目名称来定
-    base: (window as any).__POWERED_BY_QIANKUN__
-      ? "/vue2-demo/"
-      : "/subapp/vue2/",
-    mode: "history",
+    // base: (window as any).__POWERED_BY_QIANKUN__
+    //   ? "/vue2-demo/"
+    //   : "/subapp/vue2/",
+    mode: "hash",
     // hash模式不需要上面两行
     routes: routes as any,
   });

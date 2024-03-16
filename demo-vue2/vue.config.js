@@ -2,7 +2,7 @@ const isDev = process.env.NODE_ENV === "development";
 module.exports = {
   publicPath: isDev ? "/" : "/subapp/vue2/",
   devServer: {
-    port: 3002,
+    port: 9007,
     // 关闭主机检查，使微应用可以被 fetch
     disableHostCheck: true,
     // 配置跨域请求头，解决开发环境的跨域问题

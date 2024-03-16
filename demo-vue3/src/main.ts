@@ -2,7 +2,7 @@ import "./public-path";
 import { createApp } from "vue";
 import App from "./App.vue";
 import routes from "./router";
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory, createWebHashHistory } from "vue-router";
 
 const app = createApp(App);
 
@@ -11,9 +11,10 @@ let instance = null;
 function render(props: any) {
   const { container } = props;
   const router = createRouter({
-    history: createWebHistory(
-      (window as any).__POWERED_BY_QIANKUN__ ? "/vue3-demo/" : "/subapp/vue3/"
-    ),
+    history: createWebHashHistory(),
+    // history: createWebHistory(
+    //   (window as any).__POWERED_BY_QIANKUN__ ? "/vue3-demo/" : "/subapp/vue3/"
+    // ),
     routes,
   });
 
