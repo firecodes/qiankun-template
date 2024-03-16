@@ -10,7 +10,7 @@
     "start:app2": "cd app2 && npm run dev",
     "start:sub-html": "cd sub-html && npm start",
     "start:sub-react": "cd sub-react && npm start",
-    "start:sub-vue": "cd sub-vue && npm start",
+    "start:sub-vue": "cd sub-vue && npm run dev",
     "build": "npm-run-all build:* && bash ./scripts/bundle.sh",
     "build:app1": "cd app1 && npm run build",
     "build:app2": "cd app2 && npm run build",
