@@ -13,7 +13,7 @@
 </template>
 
 <style>
-#app {
+#pageMain {
   text-align: center;
   color: var(--ep-text-color-primary);
 }

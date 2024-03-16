@@ -12,7 +12,7 @@ const app = createApp(App);
 // app.use(ElementPlus);
 app.use(router)
 
-app.mount('#app')
+app.mount('#pageMain')
 
 // 启动微应用
 MicroApp()
