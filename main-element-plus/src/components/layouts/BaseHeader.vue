@@ -23,6 +23,12 @@ import { toggleDark } from "@/composables";
       <el-menu-item index="3-2">
         <RouterLink to="/app2">app2</RouterLink>
       </el-menu-item>
+      <el-menu-item index="3-3">
+        <RouterLink to="/app1">sub-html</RouterLink>
+      </el-menu-item>
+      <el-menu-item index="3-4">
+        <RouterLink to="/app2">sub-react</RouterLink>
+      </el-menu-item>
     </el-sub-menu>
     <el-menu-item index="4" disabled>Info</el-menu-item>
     <el-menu-item h="full" @click="toggleDark()">
