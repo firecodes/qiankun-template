@@ -13,6 +13,8 @@
     "install:app2": "cd app2 && npm i",
     "install:sub-html": "cd sub-html && npm i",
     "install:sub-vue": "cd sub-vue && npm i",
+    "install:sub-vue2": "cd sub-vue2 && npm i",
+    "install:sub-vue3": "cd sub-vue3 && npm i",
     "install:demo-react": "cd demo-react && npm i",
     "install:demo-vue2": "cd demo-vue2 && npm i",
     "install:demo-vue3": "cd demo-vue3 && npm i",
