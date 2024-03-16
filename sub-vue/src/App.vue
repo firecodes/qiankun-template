@@ -4,8 +4,15 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <RouterView />
-  <h1>2222222222222222</h1>
+  <div>
+    <div class="header">
+      <RouterLink to="/">home</RouterLink>
+      <RouterLink to="/content">content</RouterLink>
+    </div>
+
+    <RouterView />
+    <h1>2222222222222222</h1>
+  </div>
 </template>
 
 <style scoped>

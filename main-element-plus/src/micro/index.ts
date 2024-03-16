@@ -18,12 +18,12 @@ const apps: any[] = [
     container: "#container",
     activeRule: "/apps/sub-html"
   },
-  {
-    name: "sub-react",
-    entry: "http://localhost:9004/",
-    container: "#container",
-    activeRule: "/apps/sub-react"
-  },
+  // {
+  //   name: "sub-react",
+  //   entry: "http://localhost:9004/",
+  //   container: "#container",
+  //   activeRule: "/apps/sub-react"
+  // },
   {
     name: "sub-vue",
     entry: "http://localhost:9005/",
