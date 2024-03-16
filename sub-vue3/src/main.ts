@@ -6,15 +6,15 @@ import {
     QiankunProps
 } from 'vite-plugin-qiankun/dist/helper'
 
-import app from  './App.vue'
+import app from './App.vue'
 
 let root: App;
 
 function render(props: any) {
-    const { container} = props
+    const { container } = props
     root = createApp(app)
     const c = container ? container.querySelector('#app') : document.getElementById("app")
-    root.mount(c) 
+    root.mount(c)
 }
 renderWithQiankun({
     mount(props) {
@@ -32,6 +32,6 @@ renderWithQiankun({
     }
 })
 
-if(!qiankunWindow.__POWERED_BY_QIANKUN__) {
+if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
     render({})
 }
