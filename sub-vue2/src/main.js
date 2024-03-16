@@ -1,40 +1,55 @@
-import "./public-path"
+import './public-path'
 import Vue from 'vue'
 import App from './App.vue'
+import routes from './router'
+import { store as commonStore } from 'common'
+import store from './store'
+import VueRouter from 'vue-router'
 
 Vue.config.productionTip = false
+let instance = null
 
-let vm = null
-function render(props = {} ) {
-  const { container } = props
-  vm = new  Vue({
-    render: (h) => h(App)
+function render (props = {}) {
+  const { container, routerBase } = props
+  const router = new VueRouter({
+    base: window.__POWERED_BY_QIANKUN__ ? routerBase : process.env.BASE_URL,
+    mode: 'history',
+    routes
   })
-  // 为了避免 #app 与其他应用的 DOM 冲突，需要限制查找范围
-  .$mount(container ? container.querySelector("#app") : "#app")
+
+  instance = new Vue({
+    router,
+    store,
+    render: (h) => h(App)
+  }).$mount(container ? container.querySelector('#app') : '#app')
 }
 
-// 独立运行时
 if (!window.__POWERED_BY_QIANKUN__) {
+  // 这里是子应用独立运行的环境，实现子应用的登录逻辑
+
+  // 独立运行时，也注册一个名为global的store module
+  commonStore.globalRegister(store)
+  // 模拟登录后，存储用户信息到global module
+  const userInfo = { name: '我是独立运行时名字叫张三' } // 假设登录后取到的用户信息
+  store.commit('global/setGlobalState', { user: userInfo })
+
   render()
 }
 
-export async function bootstrap(){
-  console.log("Vue2为应用初始化了")
+export async function bootstrap () {
+  console.log('[vue] vue app bootstraped')
 }
 
-export async function mount(props) {
-  console.log("Vue2微应用开始渲染了")
+export async function mount (props) {
+  console.log('[vue] props from main framework', props)
+
+  commonStore.globalRegister(store, props)
+
   render(props)
 }
 
-export async function unmount() {
-  render('Vue2微应用开始卸载了')
-  vm.$destroy()
-  vm.$el.innerHTML = "";
-  vm = null   
+export async function unmount () {
+  instance.$destroy()
+  instance.$el.innerHTML = ''
+  instance = null
 }
-
-new Vue({
-  render: h => h(App),
-}).$mount('#app')

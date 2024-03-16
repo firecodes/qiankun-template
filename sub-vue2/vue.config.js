@@ -1,19 +1,21 @@
-const { defineConfig } = require("@vue/cli-service");
+const { name } = require('../package.json')
 
-const name = "vue2App";
-
-module.exports = defineConfig({
-  transpileDependencies: true,
-  devServer: {
-    port: 3001,
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-    },
-  },
+module.exports = {
+  publicPath: '/subapp/sub-vue',
+  transpileDependencies: ['common'],
+  chainWebpack: config => config.resolve.symlinks(false),
   configureWebpack: {
     output: {
+      // 把子应用打包成 umd 库格式
       library: `${name}-[name]`,
-      libraryTarget: "umd",
-    },
+      libraryTarget: 'umd',
+      jsonpFunction: `webpackJsonp_${name}`
+    }
   },
-});
+  devServer: {
+    port: process.env.VUE_APP_PORT,
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    }
+  }
+}
