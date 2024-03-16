@@ -78,5 +78,17 @@ const apps: any[] = [
 	//   container: "#container",
 	//   activeRule: "/apps/demo-vue3/"
 	// },
+	{
+		name: "sub-vue2",
+		entry: "http://localhost:9009/",
+		container: "#container",
+		activeRule: "/apps/sub-vue2/"
+	},
+	{
+		name: "sub-vue3",
+		entry: "http://localhost:9010/",
+		container: "#container",
+		activeRule: "/apps/sub-vue3/"
+	},
 ];
 export default apps;
