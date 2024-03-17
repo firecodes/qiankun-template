@@ -66,8 +66,8 @@ const page = {
       <el-menu-item index="3-2" @click="goApp('/apps/app2/')">
         <a href="javascript:void(0)" to="/apps/app2/">app2</a>
       </el-menu-item>
-      <el-menu-item index="3-3" @click="goApp('/apps/sub-html/')">
-        <a href="javascript:void(0)" to="/apps/sub-html">sub-html</a>
+      <el-menu-item index="3-3" @click="goApp('/apps/one/#/sub-html')">
+        <a href="javascript:void(0)">sub-html</a>
       </el-menu-item>
       <el-menu-item index="3-4" @click="goApp('/apps/sub-react/')">
         <a href="javascript:void(0)" to="/apps/sub-react/">sub-react</a>
@@ -84,8 +84,8 @@ const page = {
       <el-menu-item index="3-8" @click="goApp('/apps/demo-vue3/')">
         <a href="javascript:void(0)" to="/apps/demo-vue3/">demo-vue3</a>
       </el-menu-item>
-      <el-menu-item index="3-5" @click="goApp('/apps/sub-vue2/')">
-        <a href="javascript:void(0)" to="/apps/sub-vue2/">sub-vue2</a>
+      <el-menu-item index="3-5" @click="goApp('/apps/one/#/sub-vue2')">
+        <a href="javascript:void(0)">sub-vue2</a>
       </el-menu-item>
       <el-menu-item index="3-5" @click="goApp('/apps/sub-vue3/')">
         <a href="javascript:void(0)" to="/apps/sub-vue3/">sub-vue3</a>
