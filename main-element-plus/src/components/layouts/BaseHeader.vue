@@ -6,7 +6,7 @@ const { appContext: { config: { globalProperties: global } } }: any = getCurrent
 import * as utils from '@/utils'
 
 const goApp = (path: string) => {
-  const fullPath = `${utils.env.getPublickPath()}#/${path}`
+  const fullPath = `${utils.env.getPublickPath()}#/${path}`;
   history.pushState({}, fullPath, fullPath);
   // history.pushState(null, item.activeRule, item.activeRule)
 }
