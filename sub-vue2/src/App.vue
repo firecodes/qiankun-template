@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/sub-vue2/about">About</router-link>
     </div>
     <div>
       <p>当前处于<code>{{ isInQiankun ? 'qiankun' : '独立运行' }}</code>环境</p>
