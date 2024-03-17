@@ -3,7 +3,15 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-   <router-view />
+  <div id="nav">
+    <router-link to="/app1/index">Home</router-link> |
+    <router-link to="/app1/about">About</router-link>
+  </div>
+  <router-view v-slot="{ Component }">
+    <keep-alive>
+      <component :is="Component" />
+    </keep-alive>
+  </router-view>
 </template>
 
 <style scoped>
@@ -14,6 +22,19 @@ header {
 .logo {
   display: block;
   margin: 0 auto 2rem;
+}
+
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
 }
 
 @media (min-width: 1024px) {

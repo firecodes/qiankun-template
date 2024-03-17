@@ -1,3 +1,4 @@
+.vite-ssg-temp
 # Logs
 logs
 *.log
@@ -6,21 +7,21 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+pnpm-lock.yaml
 
 node_modules
 .DS_Store
 dist
 dist-ssr
-coverage
 *.local
 
-/cypress/videos/
-/cypress/screenshots/
-
+# lock
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
+package-lock.json
+pnpm-lock.yaml
 *.suo
 *.ntvs*
 *.njsproj
