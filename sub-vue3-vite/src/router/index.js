@@ -1,24 +1,33 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
-import { qiankunWindow } from 'vite-plugin-qiankun/dist/helper'
 
-const routes = [
-  {
-    path: '/',
-    name: 'HelloWorld',
-    component: () => import('../components/HelloWorld.vue')
-  },
-  {
-    path: '/home',
+let basePath = `sub-vue3-vite`
+const routes = [{
+  path: '/',
+  name: '',
+  redirect: `${basePath}`,
+}, {
+  path: `/${basePath}`,
+  name: `${basePath}`,
+  component: () => import('../components/layout.vue'),
+  redirect: `/${basePath}/Home`,
+  children: [{
+    path: `/${basePath}/home`,
     name: 'home',
+    meta: {},
     component: () => import('../views/HomeView.vue')
-  },
-  // 文章详情
-  {
-    path: '/content',
+  }, {
+    path: `/${basePath}/content`,
     name: 'content',
+    meta: {},
     component: () => import('../views/AboutView.vue')
-  }
-];
+  }, {
+    path: `/${basePath}/helloWorld`,
+    name: 'helloWorld',
+    meta: {},
+    component: () => import('../components/HelloWorld.vue')
+  }]
+}]
+
 
 const router = createRouter({
   history: createWebHashHistory(),

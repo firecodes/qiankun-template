@@ -4,13 +4,13 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <div>
+    <h2>sub-vue3-vite</h2>
     <div class="header">
-      <RouterLink to="./">HelloWorld</RouterLink>
-      <RouterLink class="ml-10" to="./home">home</RouterLink>
-      <RouterLink class="ml-10" to="./content">content</RouterLink>
+      <RouterLink to="./">home</RouterLink>
+      <RouterLink class="ml-10" to="/sub-vue3-vite/helloWorld">HelloWorld</RouterLink>
+      <RouterLink class="ml-10" to="/sub-vue3-vite/content">content</RouterLink>
     </div>
     <RouterView />
-    <h2>666666666666</h2>
   </div>
 </template>
 

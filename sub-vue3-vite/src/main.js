@@ -4,10 +4,10 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import {
-    renderWithQiankun,
-    qiankunWindow,
-    QiankunProps,
-  } from 'vite-plugin-qiankun/dist/helper'
+  renderWithQiankun,
+  qiankunWindow,
+  QiankunProps,
+} from 'vite-plugin-qiankun/dist/helper'
 
 let app
 
@@ -38,8 +38,8 @@ const initQianKun = () => {
       render(_props.container)
     },
     // 应用每次 切出/卸载 会调用的unmount方法，通常在这里我们会卸载微应用的应用实例
-   async unmount(_props) {
-       await unmount()
+    async unmount(_props) {
+      await unmount()
       console.log('unmount', _props)
     },
     update: function (props) {
