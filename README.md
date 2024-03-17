@@ -55,4 +55,21 @@ npm start
 npm run build
 ```
 
+# 报错问题
+1. node 版本高于18，vue2和react 等低版本代码，运行或打包会报错，<a href="https://www.cnblogs.com/asplover/p/17188483.html">解决方案点链接</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
