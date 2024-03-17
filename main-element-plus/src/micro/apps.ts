@@ -56,12 +56,12 @@ const apps: any[] = [
 	//   container: `#container`,
 	//   activeRule: `${utils.env.getPublicPath()}#/sub-react/`
 	// },
-	// {
-	// 	name: `sub-vue3-vite`,
-	// 	entry: utils.env.isDev ? `http://localhost:9005/` : `${utils.env.getRootPath()}sub-vue3-vite/`,
-	// 	container: `#container`,
-	// 	activeRule: `${utils.env.getPublicPath()}#/sub-vue3-vite`
-	// },
+	{
+		name: `sub-vue3-vite`,
+		entry: utils.env.isDev ? `http://localhost:9005/` : `${utils.env.getRootPath()}sub-vue3-vite/`,
+		container: `#container`,
+		activeRule: `${utils.env.getPublicPath()}#/sub-vue3-vite`
+	},
 	// {
 	// 	name: `demo-react`,
 	// 	entry: utils.env.isDev ? `http://localhost:9006/` : `${utils.env.getRootPath()}demo-react/`,

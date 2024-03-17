@@ -65,15 +65,15 @@ const page = {
       <el-menu-item index="3-3" @click="goApp('sub-html')">
         <a href="javascript:void(0)">sub-html</a>
       </el-menu-item>
-      <el-menu-item index="3-4" @click="goApp('sub-react')">
+      <!-- <el-menu-item index="3-4" @click="goApp('sub-react')">
         <a href="javascript:void(0)">sub-react</a>
-      </el-menu-item>
+      </el-menu-item> -->
       <el-menu-item index="3-5" @click="goApp('sub-vue3-vite')">
         <a href="javascript:void(0)">sub-vue3-vite</a>
       </el-menu-item>
-      <el-menu-item index="3-6" @click="goApp('demo-react')">
+      <!-- <el-menu-item index="3-6" @click="goApp('demo-react')">
         <a href="javascript:void(0)">demo-react</a>
-      </el-menu-item>
+      </el-menu-item> -->
       <el-menu-item index="3-7" @click="goApp('demo-vue2')">
         <a href="javascript:void(0)">demo-vue2</a>
       </el-menu-item>
@@ -83,9 +83,9 @@ const page = {
       <el-menu-item index="3-5" @click="goApp('sub-vue2')">
         <a href="javascript:void(0)">sub-vue2</a>
       </el-menu-item>
-      <el-menu-item index="3-5" @click="goApp('sub-vue3')">
+      <!-- <el-menu-item index="3-5" @click="goApp('sub-vue3')">
         <a href="javascript:void(0)">sub-vue3</a>
-      </el-menu-item>
+      </el-menu-item> -->
     </el-sub-menu>
     <el-menu-item index="4" disabled>Info</el-menu-item>
     <el-menu-item h="full" @click="toggleDark()">

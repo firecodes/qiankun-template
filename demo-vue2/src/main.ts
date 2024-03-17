@@ -6,8 +6,8 @@ import routes from "./router";
 
 Vue.config.productionTip = false;
 
-let router = null;
-let instance: any = null;
+let router = null,
+  instance: any = null;
 
 function render(props = {}) {
   const { container } = props as any;
