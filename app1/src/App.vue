@@ -14,7 +14,7 @@ import { RouterLink, RouterView } from 'vue-router'
   </router-view>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 header {
   line-height: 1.5;
 }
