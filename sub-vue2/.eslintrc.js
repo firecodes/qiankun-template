@@ -66,9 +66,9 @@ module.exports = {
     "no-mixed-requires": [0, false],//声明时不能混用声明类型
     "no-mixed-spaces-and-tabs": [0, false],//禁止混用tab和空格
     "linebreak-style": [0, "windows"],//换行风格
-    "no-multi-spaces": 1,//不能用多余的空格
+    "no-multi-spaces": 0,//不能用多余的空格
     "no-multi-str": 0,//字符串不能用\换行
-    "no-multiple-empty-lines": [1, { "max": 0 }],//空行最多不能超过0行
+    "no-multiple-empty-lines": [0, { "max": 0 }],//空行最多不能超过0行
     "no-native-reassign": 0,//不能重写native对象
     "no-negated-in-lhs": 0,//in 操作符的左边不能有!
     "no-nested-ternary": 0,//禁止使用嵌套的三目运算
