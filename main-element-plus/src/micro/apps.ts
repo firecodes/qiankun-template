@@ -42,12 +42,12 @@ const apps: any[] = [
 	//   container: "#container",
 	//   activeRule: "/apps/app2/"
 	// },
-	// {
-	// 	name: "sub-html",
-	// 	entry: "http://localhost:9003/",
-	// 	container: "#container",
-	// 	activeRule: "/apps/sub-html"
-	// },
+	{
+		name: "sub-html",
+		entry: isDev ? "http://localhost:9003/" : "/apps/sub-html/",
+		container: "#container",
+		activeRule: "/apps/sub-html"
+	},
 	// {
 	//   name: "sub-react",
 	//   entry: "http://localhost:9004/",
@@ -78,12 +78,12 @@ const apps: any[] = [
 	// 	container: "#container",
 	// 	activeRule: "/apps/demo-vue3/"
 	// },
-	// {
-	// 	name: "sub-vue2",
-	// 	entry: "http://localhost:9009/",
-	// 	container: "#container",
-	// 	activeRule: "/apps/sub-vue2/"
-	// },
+	{
+		name: "sub-vue2",
+		entry: isDev ? "http://localhost:9009/" : "/apps/sub-vue2/",
+		container: "#container",
+		activeRule: "/apps/sub-vue2/"
+	},
 	// {
 	// 	name: "sub-vue3",
 	// 	entry: "http://localhost:9010/",
