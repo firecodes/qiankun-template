@@ -1,0 +1,57 @@
+// Ant design
+@import './antd';
+
+// init
+@import './mixins';
+@import './variables';
+
+// transition
+@import './transition';
+
+// font
+@font-face {
+  font-display: swap;
+  font-family: DINRegular;
+  src: url('/fonts/DIN-Regular.ttf');
+  // CSS Unicode Range Generator https://codepen.io/elifitch/pen/Ljqway
+  // abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/.=-;',?!#@$%^&*()_+\|:"[]{}
+  unicode-range: U+21-3B, U+3D, U+3F-5F, U+61-7D;
+}
+
+// scrollbar
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: @app-module-background-lighter;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 0;
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background-color: rgba(@app-primary-color, 0.4);
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: @app-primary-color;
+  }
+}
+
+// global
+html {
+  background-color: @app-body-background;
+}
+
+body {
+  margin: 0;
+  overflow-y: scroll;
+  font-family: @app-font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &.fullscreen {
+    overflow: hidden;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

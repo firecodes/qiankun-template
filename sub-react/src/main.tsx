@@ -1,27 +1,21 @@
 import React from "react";
 import ReactDOM, { Root } from "react-dom/client";
 import App from "./App";
+import { renderWithQiankun, qiankunWindow } from "vite-plugin-qiankun/dist/helper";
 
-import {
-  renderWithQiankun,
-  qiankunWindow,
-} from "vite-plugin-qiankun/dist/helper";
+import '@/styles/app.less'
+import dayjs from 'dayjs'
+import duration from 'dayjs/plugin/duration'
+dayjs.extend(duration)
 
 let root: Root;
-
 function render(props: any) {
   const { container } = props;
   root = ReactDOM.createRoot(
-    container
-      ? container.querySelector("#root")
-      : document.getElementById("root")
+    container ? container.querySelector("#root") : document.getElementById("root")
   );
-
-  root.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  );
+  // ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(<App />)
+  root.render(<React.StrictMode><App /></React.StrictMode>);
 }
 
 renderWithQiankun({
