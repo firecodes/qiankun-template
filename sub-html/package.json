@@ -6,12 +6,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env PUBLIC_PATH=/ http-server ./ -p 9003 --cors",
-    "build": "bash ./scripts/build.sh"
+    "build": "gulp build",
+    "server": "gulp server"
   },
-  "author": "fengxianqi",
+  "author": "liu",
   "license": "MIT",
   "devDependencies": {
+    "chalk": "^5.2.0",
     "cross-env": "^7.0.3",
-    "http-server": "^13.0.0"
+    "express": "^4.18.2",
+    "fs-extra": "^11.1.1",
+    "gulp": "^4.0.2",
+    "portfinder": "^1.0.32",
+    "http-server": "^13.0.0",
+    "shelljs": "^0.8.5"
   }
 }
