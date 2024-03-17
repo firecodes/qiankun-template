@@ -1,17 +1,12 @@
 <script lang="ts" setup>
+import { ComponentInternalInstance, getCurrentInstance, onMounted } from "vue";
 import { RouterLink, RouterView } from 'vue-router'
 import { toggleDark } from "@/composables";
-import { ref } from "vue";
-
-const c = ref(1);
-const isActive = (num: number) => {
-  if (c.value === num) {
-    return "active";
-  }
-};
+const { appContext: { config: { globalProperties: global } } }: any = getCurrentInstance();//3.0.11
+import * as utils from '@/utils'
 
 const goApp = (path: string) => {
-  const fullPath = `/apps/one/#/${path}`
+  const fullPath = `${utils.env.getPublickPath()}#/${path}`
   history.pushState({}, fullPath, fullPath);
   // history.pushState(null, item.activeRule, item.activeRule)
 }

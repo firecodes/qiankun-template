@@ -1,12 +1,11 @@
-
-const env = import.meta.env
-const isDev = env.NODE_ENV === `development`;
-console.log(`main one __process__:`, env)
+// const env = import.meta.env
+import * as utils from '@/utils'
+console.log(`main one __process__:`, utils.env)
 
 // const apps = [
 // 	{
 // 		name: `vue3-demo`,
-// 		entry: isDev ? `//localhost:3001/` : `/subapp/vue3/`,
+// 		entry: utils.env.isDev ? `//localhost:3001/` : `/subapp/vue3/`,
 // 		activeRule: `/vue3-demo`,
 // 		container: `#subapp-viewport`, // 子应用挂载的div
 // 		props: {
@@ -15,7 +14,7 @@ console.log(`main one __process__:`, env)
 // 	},
 // 	{
 // 		name: `vue2-demo`,
-// 		entry: isDev ? `//localhost:3002/` : `/subapp/vue2/`,
+// 		entry: utils.env.isDev ? `//localhost:3002/` : `/subapp/vue2/`,
 // 		activeRule: `/vue2-demo`,
 // 		container: `#subapp-viewport`, // 子应用挂载的div
 // 		props: {
@@ -24,7 +23,7 @@ console.log(`main one __process__:`, env)
 // 	},
 // 	{
 // 		name: `react-demo`,
-// 		entry: isDev ? `//localhost:3003/` : `/react-demo/`,
+// 		entry: utils.env.isDev ? `//localhost:3003/` : `/react-demo/`,
 // 		activeRule: `/react-demo`,
 // 		container: `#subapp-viewport`, // 子应用挂载的div
 // 		props: {
@@ -35,63 +34,63 @@ console.log(`main one __process__:`, env)
 const apps: any[] = [
 	// {
 	//   name: `app1`, 
-	//   entry: isDev ? `http://localhost:9001/` : `/apps/app1/`,
+	//   entry: utils.env.isDev ? `http://localhost:9001/` : `/apps/app1/`,
 	//   container: `#container`, 
-	//   activeRule: `${env.VITE_PUBLIC_PATH}#/app1/`
+	//   activeRule: `${utils.env.getPublickPath()}#/app1/`
 	// },
 	// {
 	//   name: `app2`,
-	//   entry:  isDev ? `http://localhost:9002/` : `/apps/app2/`,
+	//   entry:  utils.env.isDev ? `http://localhost:9002/` : `/apps/app2/`,
 	//   container: `#container`,
-	//   activeRule: `${env.VITE_PUBLIC_PATH}#/app2/`
+	//   activeRule: `${utils.env.getPublickPath()}#/app2/`
 	// },
 	{
 		name: `sub-html`,
-		entry: isDev ? `http://localhost:9003/` : `/apps/sub-html/`,
+		entry: utils.env.isDev ? `http://localhost:9003/` : `/apps/sub-html/`,
 		container: `#container`,
-		activeRule: `${env.VITE_PUBLIC_PATH}#/sub-html`
+		activeRule: `${utils.env.getPublickPath()}#/sub-html`
 	},
 	// {
 	//   name: `sub-react`,
-	//   entry: isDev ? `http://localhost:9004/`: `/apps/sub-react/`,
+	//   entry: utils.env.isDev ? `http://localhost:9004/`: `/apps/sub-react/`,
 	//   container: `#container`,
-	//   activeRule: `${env.VITE_PUBLIC_PATH}#/sub-react/`
+	//   activeRule: `${utils.env.getPublickPath()}#/sub-react/`
 	// },
 	// {
 	// 	name: `sub-vue3-vite`,
-	// 	entry: isDev ? `http://localhost:9005/` : `/apps/sub-vue3-vite/`,
+	// 	entry: utils.env.isDev ? `http://localhost:9005/` : `/apps/sub-vue3-vite/`,
 	// 	container: `#container`,
-	// 	activeRule: `${env.VITE_PUBLIC_PATH}#/sub-vue3-vite`
+	// 	activeRule: `${utils.env.getPublickPath()}#/sub-vue3-vite`
 	// },
 	// {
 	// 	name: `demo-react`,
-	// 	entry: isDev ? `http://localhost:9006/` : `/apps/demo-react/`,
+	// 	entry: utils.env.isDev ? `http://localhost:9006/` : `/apps/demo-react/`,
 	// 	container: `#container`,
-	// 	activeRule: `${env.VITE_PUBLIC_PATH}#/demo-react/`
+	// 	activeRule: `${utils.env.getPublickPath()}#/demo-react/`
 	// },
 	// {
 	// 	name: `demo-vue2`,
-	// 	entry: isDev ? `http://localhost:9007/` : `/apps/demo-vue2/`,
+	// 	entry: utils.env.isDev ? `http://localhost:9007/` : `/apps/demo-vue2/`,
 	// 	container: `#container`,
-	// 	activeRule: `${env.VITE_PUBLIC_PATH}#/demo-vue2/`
+	// 	activeRule: `${utils.env.getPublickPath()}#/demo-vue2/`
 	// },
 	// {
 	// 	name: `demo-vue3`,
-	// 	entry: isDev ? `http://localhost:9008/` : `/apps/demo-vue3/`,
+	// 	entry: utils.env.isDev ? `http://localhost:9008/` : `/apps/demo-vue3/`,
 	// 	container: `#container`,
-	// 	activeRule: `${env.VITE_PUBLIC_PATH}#/demo-vue3/`
+	// 	activeRule: `${utils.env.getPublickPath()}#/demo-vue3/`
 	// },
 	{
 		name: `sub-vue2`,
-		entry: isDev ? `http://localhost:9009/` : `/apps/sub-vue2/`,
+		entry: utils.env.isDev ? `http://localhost:9009/` : `/apps/sub-vue2/`,
 		container: `#container`,
-		activeRule: `${env.VITE_PUBLIC_PATH}#/sub-vue2`
+		activeRule: `${utils.env.getPublickPath()}#/sub-vue2`
 	},
 	// {
 	// 	name: `sub-vue3`,
-	// 	entry: isDev ? `http://localhost:9010/` : `/apps/sub-vue3/`,
+	// 	entry: utils.env.isDev ? `http://localhost:9010/` : `/apps/sub-vue3/`,
 	// 	container: `#container`,
-	// 	activeRule: `${env.VITE_PUBLIC_PATH}#/sub-vue3/`
+	// 	activeRule: `${utils.env.getPublickPath()}#/sub-vue3/`
 	// },
 ];
 export default apps;
