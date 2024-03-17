@@ -42,12 +42,12 @@ const apps: any[] = [
 	//   container: "#container",
 	//   activeRule: "/apps/app2/"
 	// },
-	// {
-	//   name: "sub-html",
-	//   entry: "http://localhost:9003/",
-	//   container: "#container",
-	//   activeRule: "/apps/sub-html/"
-	// },
+	{
+		name: "sub-html",
+		entry: "http://localhost:9003/",
+		container: "#container",
+		activeRule: "/apps/sub-html/"
+	},
 	// {
 	//   name: "sub-react",
 	//   entry: "http://localhost:9004/",
@@ -55,10 +55,10 @@ const apps: any[] = [
 	//   activeRule: "/apps/sub-react/"
 	// },
 	{
-		name: "sub-vue",
+		name: "sub-vue3-vite",
 		entry: "http://localhost:9005/",
 		container: "#container",
-		activeRule: "/apps/sub-vue/"
+		activeRule: "/apps/sub-vue3-vite/"
 	},
 	// {
 	//   name: "demo-react",
