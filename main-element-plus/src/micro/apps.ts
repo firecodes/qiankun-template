@@ -31,14 +31,14 @@ const isDev = process.env.NODE_ENV === "development";
 // ];
 const apps: any[] = [
 	// {
-	//   name: "app1", // 应用的名字
-	//   entry: "http://localhost:9001/", // 默认加载这个html，解析里面的js动态的执行（子应用必须支持跨域，内部使用的是 fetch）
-	//   container: "#container", // 要渲染到的节点id，对应上一步中src/App.vue中的渲染节点
+	//   name: "app1", 
+	//   entry: isDev ? "http://localhost:9001/" : "/apps/app1/",
+	//   container: "#container", 
 	//   activeRule: "/apps/one/#/app1/"
 	// },
 	// {
 	//   name: "app2",
-	//   entry: "http://localhost:9002/",
+	//   entry:  isDev ? "http://localhost:9002/" : "/apps/app2/",
 	//   container: "#container",
 	//   activeRule: "/apps/one/#/app2/"
 	// },
@@ -50,31 +50,31 @@ const apps: any[] = [
 	},
 	// {
 	//   name: "sub-react",
-	//   entry: "http://localhost:9004/",
+	//   entry: isDev ? "http://localhost:9004/": "/apps/sub-react/",
 	//   container: "#container",
 	//   activeRule: "/apps/one/#/sub-react/"
 	// },
 	// {
 	// 	name: "sub-vue3-vite",
-	// 	entry: "http://localhost:9005/",
+	// 	entry: isDev ? "http://localhost:9005/" : "/apps/sub-vue3-vite/",
 	// 	container: "#container",
 	// 	activeRule: "/apps/one/#/sub-vue3-vite"
 	// },
 	// {
 	// 	name: "demo-react",
-	// 	entry: "http://localhost:9006/",
+	// 	entry: isDev ? "http://localhost:9006/" : "/apps/demo-react/",
 	// 	container: "#container",
 	// 	activeRule: "/apps/one/#/demo-react/"
 	// },
 	// {
 	// 	name: "demo-vue2",
-	// 	entry: "http://localhost:9007/",
+	// 	entry: isDev ? "http://localhost:9007/" : "/apps/demo-vue2/",
 	// 	container: "#container",
 	// 	activeRule: "/apps/one/#/demo-vue2/"
 	// },
 	// {
 	// 	name: "demo-vue3",
-	// 	entry: "http://localhost:9008/",
+	// 	entry: isDev ? "http://localhost:9008/" : "/apps/demo-vue3/",
 	// 	container: "#container",
 	// 	activeRule: "/apps/one/#/demo-vue3/"
 	// },
@@ -86,7 +86,7 @@ const apps: any[] = [
 	},
 	// {
 	// 	name: "sub-vue3",
-	// 	entry: "http://localhost:9010/",
+	// 	entry: isDev ? "http://localhost:9010/" : "/apps/sub-vue3/",
 	// 	container: "#container",
 	// 	activeRule: "/apps/one/#/sub-vue3/"
 	// },
