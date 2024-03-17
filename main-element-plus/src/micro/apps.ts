@@ -44,7 +44,7 @@ const apps: any[] = [
 	// },
 	{
 		name: "sub-html",
-		entry: isDev ? "http://localhost:9003/" : "/apps/sub-html/",
+		entry: isDev ? "http://localhost:9003/" : "./apps/sub-html/",
 		container: "#container",
 		activeRule: "/apps/sub-html"
 	},
@@ -80,7 +80,7 @@ const apps: any[] = [
 	// },
 	{
 		name: "sub-vue2",
-		entry: isDev ? "http://localhost:9009/" : "/apps/sub-vue2/",
+		entry: isDev ? "http://localhost:9009/" : "./apps/sub-vue2/",
 		container: "#container",
 		activeRule: "/apps/sub-vue2/"
 	},

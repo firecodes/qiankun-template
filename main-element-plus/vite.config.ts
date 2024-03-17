@@ -25,7 +25,10 @@ export default defineConfig(({ command, mode }) => {
   return {
     // root: process.cwd(), // 项目根目录（index.html 文件所在的位置）,
     // publicDir: 'public', // 静态资源服务的文件夹
+    // envDir: "./env", // 环境变量的存储路径
     base: !isBuild ? './' : '/apps/one/',
+    logLevel: "info", // default
+    clearScreen: false, // 默认值为true。调试时设置为false，可以看到更多信息
     resolve: {
       alias: {
         '@/': `${pathSrc}/`,
@@ -87,7 +90,12 @@ export default defineConfig(({ command, mode }) => {
       },
     },
     build: {
-      chunkSizeWarningLimit: 1024, // chunk 大小警告的限制（单位kb）
-    }
+      outDir: path.resolve(__dirname, "dist"),
+      assetsDir: "static",
+      emptyOutDir: false,
+      target: "esnext", // default，最低为es2015
+      cssCodeSplit: true, // default
+      sourcemap: false, // default
+    },
   }
 })

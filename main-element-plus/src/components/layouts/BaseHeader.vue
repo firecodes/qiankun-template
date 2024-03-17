@@ -1,6 +1,18 @@
 <script lang="ts" setup>
 import { RouterLink, RouterView } from 'vue-router'
 import { toggleDark } from "@/composables";
+import { ref } from "vue";
+
+const c = ref(1);
+const isActive = (num: number) => {
+  if (c.value === num) {
+    return "active";
+  }
+};
+
+const goApp = (path: string) => {
+  history.pushState({}, "", path);
+}
 </script>
 
 <template>
@@ -17,35 +29,35 @@ import { toggleDark } from "@/composables";
     </el-sub-menu>
     <el-sub-menu index="3">
       <template #title>Qiankun Sub APP</template>
-      <el-menu-item index="3-1">
-        <RouterLink to="/apps/app1/">app1</RouterLink>
+      <el-menu-item index="3-1" @click="goApp('/apps/app1/')">
+        <a href="javascript:void(0)">app1</a>
       </el-menu-item>
-      <el-menu-item index="3-2">
-        <RouterLink to="/apps/app2/">app2</RouterLink>
+      <el-menu-item index="3-2" @click="goApp('/apps/app2/')">
+        <a href="javascript:void(0)" to="/apps/app2/">app2</a>
       </el-menu-item>
-      <el-menu-item index="3-3">
-        <RouterLink to="/apps/sub-html">sub-html</RouterLink>
+      <el-menu-item index="3-3" @click="goApp('/apps/sub-html/')">
+        <a href="javascript:void(0)" to="/apps/sub-html">sub-html</a>
       </el-menu-item>
-      <el-menu-item index="3-4">
-        <RouterLink to="/apps/sub-react/">sub-react</RouterLink>
+      <el-menu-item index="3-4" @click="goApp('/apps/sub-react/')">
+        <a href="javascript:void(0)" to="/apps/sub-react/">sub-react</a>
       </el-menu-item>
-      <el-menu-item index="3-5">
-        <RouterLink to="/apps/sub-vue3-vite">sub-vue3-vite</RouterLink>
+      <el-menu-item index="3-5" @click="goApp('/apps/sub-vue3-vite/')">
+        <a href="javascript:void(0)" to="/apps/sub-vue3-vite">sub-vue3-vite</a>
       </el-menu-item>
-      <el-menu-item index="3-6">
-        <RouterLink to="/apps/demo-react/">emo-react</RouterLink>
+      <el-menu-item index="3-6" @click="goApp('/apps/demo-react/')">
+        <a href="javascript:void(0)" to="/apps/demo-react/">demo-react</a>
       </el-menu-item>
-      <el-menu-item index="3-7">
-        <RouterLink to="/apps/demo-vue2/">demo-vue2</RouterLink>
+      <el-menu-item index="3-7" @click="goApp('/apps/demo-vue2/')">
+        <a href="javascript:void(0)" to="/apps/demo-vue2/">demo-vue2</a>
       </el-menu-item>
-      <el-menu-item index="3-8">
-        <RouterLink to="/apps/demo-vue3/">demo-vue3</RouterLink>
+      <el-menu-item index="3-8" @click="goApp('/apps/demo-vue3/')">
+        <a href="javascript:void(0)" to="/apps/demo-vue3/">demo-vue3</a>
       </el-menu-item>
-      <el-menu-item index="3-5">
-        <RouterLink to="/apps/sub-vue2/">sub-vue2</RouterLink>
+      <el-menu-item index="3-5" @click="goApp('/apps/vue2/')">
+        <a href="javascript:void(0)" to="/apps/sub-vue2/">sub-vue2</a>
       </el-menu-item>
-      <el-menu-item index="3-5">
-        <RouterLink to="/apps/sub-vue3/">sub-vue3</RouterLink>
+      <el-menu-item index="3-5" @click="goApp('/apps/sub-vue3/')">
+        <a href="javascript:void(0)" to="/apps/sub-vue3/">sub-vue3</a>
       </el-menu-item>
     </el-sub-menu>
     <el-menu-item index="4" disabled>Info</el-menu-item>
