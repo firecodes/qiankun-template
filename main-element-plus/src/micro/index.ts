@@ -31,7 +31,9 @@ function registerApps() {
         return Promise.resolve();
       }
     });
-    start({ prefetch: true, sandbox: { strictStyleIsolation: true } });
+    start({ prefetch: true, sandbox: {} });
+    // start({ prefetch: true, sandbox: {strictStyleIsolation: true} });
+    // 
     // start({
     //   prefetch: 'all', // 预加载
     //   sandbox: {

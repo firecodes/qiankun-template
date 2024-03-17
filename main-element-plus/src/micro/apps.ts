@@ -42,48 +42,48 @@ const apps: any[] = [
 	//   container: "#container",
 	//   activeRule: "/apps/app2/"
 	// },
-	{
-		name: "sub-html",
-		entry: "http://localhost:9003/",
-		container: "#container",
-		activeRule: "/apps/sub-html/"
-	},
+	// {
+	// 	name: "sub-html",
+	// 	entry: "http://localhost:9003/",
+	// 	container: "#container",
+	// 	activeRule: "/apps/sub-html"
+	// },
 	// {
 	//   name: "sub-react",
 	//   entry: "http://localhost:9004/",
 	//   container: "#container",
 	//   activeRule: "/apps/sub-react/"
 	// },
-	{
-		name: "sub-vue3-vite",
-		entry: "http://localhost:9005/",
-		container: "#container",
-		activeRule: "/apps/sub-vue3-vite/"
-	},
 	// {
-	//   name: "demo-react",
-	//   entry: "http://localhost:9006/",
-	//   container: "#container",
-	//   activeRule: "/apps/demo-react/"
+	// 	name: "sub-vue3-vite",
+	// 	entry: "http://localhost:9005/",
+	// 	container: "#container",
+	// 	activeRule: "/apps/sub-vue3-vite"
 	// },
 	// {
-	//   name: "demo-vue2",
-	//   entry: "http://localhost:9007/",
-	//   container: "#container",
-	//   activeRule: "/apps/demo-vue2/"
+	// 	name: "demo-react",
+	// 	entry: "http://localhost:9006/",
+	// 	container: "#container",
+	// 	activeRule: "/apps/demo-react/"
 	// },
 	// {
-	//   name: "demo-vue3",
-	//   entry: "http://localhost:9008/",
-	//   container: "#container",
-	//   activeRule: "/apps/demo-vue3/"
+	// 	name: "demo-vue2",
+	// 	entry: "http://localhost:9007/",
+	// 	container: "#container",
+	// 	activeRule: "/apps/demo-vue2/"
 	// },
-	{
-		name: "sub-vue2",
-		entry: "http://localhost:9009/",
-		container: "#container",
-		activeRule: "/apps/sub-vue2/"
-	},
+	// {
+	// 	name: "demo-vue3",
+	// 	entry: "http://localhost:9008/",
+	// 	container: "#container",
+	// 	activeRule: "/apps/demo-vue3/"
+	// },
+	// {
+	// 	name: "sub-vue2",
+	// 	entry: "http://localhost:9009/",
+	// 	container: "#container",
+	// 	activeRule: "/apps/sub-vue2/"
+	// },
 	{
 		name: "sub-vue3",
 		entry: "http://localhost:9010/",
