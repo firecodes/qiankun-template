@@ -33,6 +33,17 @@ export default defineConfig(({ command, mode }) => {
     server: {
       port: 9004,
       host: "localhost",
+      proxy: {
+        '/api': {
+          target: 'https://api.surmon.me',
+          rewrite: (path) => path.replace(/^\/api/, ''),
+          changeOrigin: true,
+          headers: {
+            origin: 'https://surmon.me',
+            referer: 'https://surmon.me'
+          }
+        }
+      }
     },
     build: {
       outDir: path.resolve(__dirname, "dist"),
