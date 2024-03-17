@@ -1,0 +1,1 @@
+import{_ as n,o,a as d,b as s,d as t}from"./index-f93152ea.js";const a={},_={class:"item"},c={class:"details"};function l(e,r){return o(),d("div",_,[s("i",null,[t(e.$slots,"icon",{},void 0,!0)]),s("div",c,[s("h3",null,[t(e.$slots,"heading",{},void 0,!0)]),t(e.$slots,"default",{},void 0,!0)])])}const u=n(a,[["render",l],["__scopeId","data-v-fd0742eb"]]);export{u as default};
