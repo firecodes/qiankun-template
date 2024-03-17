@@ -1,7 +1,7 @@
 <template>
   <div id="nav">
-    <router-link to="/index">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/demo-vue3/index">Home</router-link> |
+    <router-link to="/demo-vue3/about">About</router-link>
   </div>
   <router-view v-slot="{ Component }">
     <keep-alive>

@@ -1,22 +1,32 @@
 import { RouteRecordRaw } from "vue-router";
-import Home from "../views/Home.vue";
-import About from "../views/About.vue";
+const basePath = "demo-vue3";
 
 const routes: Array<RouteRecordRaw> = [
-	{
-		path: "/index",
-		name: "Home",
-		component: Home
-	},
-	{
-		path: "/about",
-		name: "About",
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		// component: () => import(/* webpackChunkName: "about" */ "../views/About.vue")
-		component: About
-	}
+  {
+    path: "/",
+    name: "",
+    redirect: `${basePath}`,
+  },
+  {
+    path: `/${basePath}`,
+    name: `${basePath}`,
+    component: () => import("../components/layout.vue"),
+    redirect: `/${basePath}/index`,
+    children: [
+      {
+        path: `/${basePath}/index`,
+        name: "index",
+        meta: {},
+        component: () => import("../views/Home.vue"),
+      },
+      {
+        path: `/${basePath}/about`,
+        name: "about",
+        meta: {},
+        component: () => import("../views/About.vue"),
+      },
+    ],
+  },
 ];
 
 export default routes;
