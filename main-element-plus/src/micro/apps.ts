@@ -34,13 +34,13 @@ const apps: any[] = [
 	//   name: "app1", // 应用的名字
 	//   entry: "http://localhost:9001/", // 默认加载这个html，解析里面的js动态的执行（子应用必须支持跨域，内部使用的是 fetch）
 	//   container: "#container", // 要渲染到的节点id，对应上一步中src/App.vue中的渲染节点
-	//   activeRule: "/apps/app1/"
+	//   activeRule: "/apps/one/#/app1/"
 	// },
 	// {
 	//   name: "app2",
 	//   entry: "http://localhost:9002/",
 	//   container: "#container",
-	//   activeRule: "/apps/app2/"
+	//   activeRule: "/apps/one/#/app2/"
 	// },
 	{
 		name: "sub-html",
@@ -52,31 +52,31 @@ const apps: any[] = [
 	//   name: "sub-react",
 	//   entry: "http://localhost:9004/",
 	//   container: "#container",
-	//   activeRule: "/apps/sub-react/"
+	//   activeRule: "/apps/one/#/sub-react/"
 	// },
 	// {
 	// 	name: "sub-vue3-vite",
 	// 	entry: "http://localhost:9005/",
 	// 	container: "#container",
-	// 	activeRule: "/apps/sub-vue3-vite"
+	// 	activeRule: "/apps/one/#/sub-vue3-vite"
 	// },
 	// {
 	// 	name: "demo-react",
 	// 	entry: "http://localhost:9006/",
 	// 	container: "#container",
-	// 	activeRule: "/apps/demo-react/"
+	// 	activeRule: "/apps/one/#/demo-react/"
 	// },
 	// {
 	// 	name: "demo-vue2",
 	// 	entry: "http://localhost:9007/",
 	// 	container: "#container",
-	// 	activeRule: "/apps/demo-vue2/"
+	// 	activeRule: "/apps/one/#/demo-vue2/"
 	// },
 	// {
 	// 	name: "demo-vue3",
 	// 	entry: "http://localhost:9008/",
 	// 	container: "#container",
-	// 	activeRule: "/apps/demo-vue3/"
+	// 	activeRule: "/apps/one/#/demo-vue3/"
 	// },
 	{
 		name: "sub-vue2",
@@ -88,7 +88,7 @@ const apps: any[] = [
 	// 	name: "sub-vue3",
 	// 	entry: "http://localhost:9010/",
 	// 	container: "#container",
-	// 	activeRule: "/apps/sub-vue3/"
+	// 	activeRule: "/apps/one/#/sub-vue3/"
 	// },
 ];
 export default apps;

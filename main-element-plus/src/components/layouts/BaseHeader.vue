@@ -11,7 +11,8 @@ const isActive = (num: number) => {
 };
 
 const goApp = (path: string) => {
-  history.pushState({}, path, path);
+  const fullPath = `/apps/one/#/${path}`
+  history.pushState({}, fullPath, fullPath);
   // history.pushState(null, item.activeRule, item.activeRule)
 }
 
@@ -60,35 +61,35 @@ const page = {
     </el-sub-menu>
     <el-sub-menu index="3">
       <template #title>Qiankun Sub APP</template>
-      <el-menu-item index="3-1" @click="goApp('/apps/app1/')">
+      <el-menu-item index="3-1" @click="goApp('app1')">
         <a href="javascript:void(0)">app1</a>
       </el-menu-item>
-      <el-menu-item index="3-2" @click="goApp('/apps/app2/')">
-        <a href="javascript:void(0)" to="/apps/app2/">app2</a>
+      <el-menu-item index="3-2" @click="goApp('app2')">
+        <a href="javascript:void(0)" to="app2">app2</a>
       </el-menu-item>
-      <el-menu-item index="3-3" @click="goApp('/apps/one/#/sub-html')">
+      <el-menu-item index="3-3" @click="goApp('sub-html')">
         <a href="javascript:void(0)">sub-html</a>
       </el-menu-item>
-      <el-menu-item index="3-4" @click="goApp('/apps/sub-react/')">
-        <a href="javascript:void(0)" to="/apps/sub-react/">sub-react</a>
+      <el-menu-item index="3-4" @click="goApp('sub-react')">
+        <a href="javascript:void(0)">sub-react</a>
       </el-menu-item>
-      <el-menu-item index="3-5" @click="goApp('/apps/sub-vue3-vite/')">
-        <a href="javascript:void(0)" to="/apps/sub-vue3-vite">sub-vue3-vite</a>
+      <el-menu-item index="3-5" @click="goApp('sub-vue3-vite')">
+        <a href="javascript:void(0)">sub-vue3-vite</a>
       </el-menu-item>
-      <el-menu-item index="3-6" @click="goApp('/apps/demo-react/')">
-        <a href="javascript:void(0)" to="/apps/demo-react/">demo-react</a>
+      <el-menu-item index="3-6" @click="goApp('demo-react')">
+        <a href="javascript:void(0)">demo-react</a>
       </el-menu-item>
-      <el-menu-item index="3-7" @click="goApp('/apps/demo-vue2/')">
-        <a href="javascript:void(0)" to="/apps/demo-vue2/">demo-vue2</a>
+      <el-menu-item index="3-7" @click="goApp('demo-vue2')">
+        <a href="javascript:void(0)">demo-vue2</a>
       </el-menu-item>
-      <el-menu-item index="3-8" @click="goApp('/apps/demo-vue3/')">
-        <a href="javascript:void(0)" to="/apps/demo-vue3/">demo-vue3</a>
+      <el-menu-item index="3-8" @click="goApp('demo-vue3')">
+        <a href="javascript:void(0)">demo-vue3</a>
       </el-menu-item>
-      <el-menu-item index="3-5" @click="goApp('/apps/one/#/sub-vue2')">
+      <el-menu-item index="3-5" @click="goApp('sub-vue2')">
         <a href="javascript:void(0)">sub-vue2</a>
       </el-menu-item>
-      <el-menu-item index="3-5" @click="goApp('/apps/sub-vue3/')">
-        <a href="javascript:void(0)" to="/apps/sub-vue3/">sub-vue3</a>
+      <el-menu-item index="3-5" @click="goApp('sub-vue3')">
+        <a href="javascript:void(0)">sub-vue3</a>
       </el-menu-item>
     </el-sub-menu>
     <el-menu-item index="4" disabled>Info</el-menu-item>
