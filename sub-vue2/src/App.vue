@@ -24,23 +24,23 @@ import { mapState, mapActions } from 'vuex'
 export default {
   computed: {
     // 通过global获取user的信息
-    ...mapState('global', {
-      user: state => state.user
-    }),
+    // ...mapState('global', {
+    //   user: state => state.user
+    // }),
     isInQiankun() {
       return window.__POWERED_BY_QIANKUN__
     }
   },
   methods: {
-    ...mapActions('global', ['setGlobalState']),
+    // ...mapActions('global', ['setGlobalState']),
     gotoSubReact() {
       history.pushState(null, 'sub-react', '/sub-react')
     },
     changeUsername() {
       // 也可通过 store.commit('global/setGlobalState', { user: '李四' }) 进行操作
-      this.setGlobalState({
-        user: { name: '李四' + Math.round(Math.random() * 100) }
-      })
+      // this.setGlobalState({
+      //   user: { name: '李四' + Math.round(Math.random() * 100) }
+      // })
     },
     openSubVue() {
       if (!this.isInQiankun) {

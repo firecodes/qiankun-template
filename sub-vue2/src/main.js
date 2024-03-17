@@ -27,8 +27,8 @@ if (!window.__POWERED_BY_QIANKUN__) {
   // 这里是子应用独立运行的环境，实现子应用的登录逻辑
 
   // 模拟登录后，存储用户信息到global module
-  const userInfo = { "name": '我是独立运行时名字叫张三' } // 假设登录后取到的用户信息
-  store.commit('global/setGlobalState', { "user": userInfo })
+  // const userInfo = { "name": '我是独立运行时名字叫张三' } // 假设登录后取到的用户信息
+  // store.commit('global/setGlobalState', { "user": userInfo })
 
   render()
 }

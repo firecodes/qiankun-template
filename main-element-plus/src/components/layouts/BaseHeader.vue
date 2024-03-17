@@ -11,8 +11,39 @@ const isActive = (num: number) => {
 };
 
 const goApp = (path: string) => {
-  history.pushState({}, "", path);
+  history.pushState({}, path, path);
+  // history.pushState(null, item.activeRule, item.activeRule)
 }
+
+const page = {
+  bindCurrent() {
+    const path = window.location.pathname
+    // if (this.microApps.findIndex(item => item.activeRule === path) >= 0) {
+    //   this.current = path
+    // }
+  },
+  listenRouterChange() {
+    const _wr = function (type) {
+      // const orig = history[type]
+      // return function () {
+      //   const rv = orig.apply(this, arguments)
+      //   const e = new Event(type)
+      //   e.arguments = arguments
+      //   window.dispatchEvent(e)
+      //   return rv
+      // }
+    }
+    // history.pushState = _wr('pushState')
+    window.addEventListener('pushState', this.bindCurrent)
+    window.addEventListener('popstate', this.bindCurrent)
+    // this.$once('hook:beforeDestroy', () => {
+    //   window.removeEventListener('pushState', this.bindCurrent)
+    //   window.removeEventListener('popstate', this.bindCurrent)
+    // })
+  }
+}
+
+
 </script>
 
 <template>
@@ -53,7 +84,7 @@ const goApp = (path: string) => {
       <el-menu-item index="3-8" @click="goApp('/apps/demo-vue3/')">
         <a href="javascript:void(0)" to="/apps/demo-vue3/">demo-vue3</a>
       </el-menu-item>
-      <el-menu-item index="3-5" @click="goApp('/apps/vue2/')">
+      <el-menu-item index="3-5" @click="goApp('/apps/sub-vue2/')">
         <a href="javascript:void(0)" to="/apps/sub-vue2/">sub-vue2</a>
       </el-menu-item>
       <el-menu-item index="3-5" @click="goApp('/apps/sub-vue3/')">
