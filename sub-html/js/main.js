@@ -7,13 +7,16 @@ const render = (options) => {
 
   console.log("init subhtml", options)
 
-  document.querySelector('#current-env').innerHTML = 'qiankun'
+  if (document.querySelector('#current-env')) {
+    document.querySelector('#current-env').innerHTML = 'qiankun'
+  }
   // 展示基座下发的状态
   const node = document.createElement('div')
   node.innerHTML = `基座下发的globalState： <code>${JSON.stringify(options)}</code>。
   <a target="_blank" href="${window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__}">打开独立运行环境</a>`
-
-  document.querySelector('.container').appendChild(node)
+  if (document.querySelector('.container')) {
+    document.querySelector('.container').appendChild(node)
+  }
 
   return Promise.resolve();
 };

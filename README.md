@@ -6,28 +6,31 @@
     "install:sub-vue3-vite": "cd sub-vue3-vite && npm i",
     "install:sub-vue2": "cd sub-vue2 && npm i",
     "install:sub-vue3": "cd sub-vue3 && npm i",
-    "install:sub-react": "cd sub-react && npm i",
-    "install:demo-react": "cd demo-react && npm i",
     "install:demo-vue2": "cd demo-vue2 && npm i",
     "install:demo-vue3": "cd demo-vue3 && npm i",
     "start": "npm-run-all --parallel start:*",
     "start:app1": "cd app1 && npm run dev",
     "start:app2": "cd app2 && npm run dev",
     "start:sub-html": "cd sub-html && npm start",
-    "start:sub-react": "cd sub-react && npm start",
     "start:sub-vue3-vite": "cd sub-vue3-vite && npm run dev",
     "start:sub-vue2": "cd sub-vue2 && npm run start",
-    "start:sub-vue3": "cd sub-vue3 && npm run start",
-    "start:demo-react": "cd demo-react && npm start",
-    "start:demo-vue2": "cd demo-vue2 && npm start",
-    "start:demo-vue3": "cd demo-vue3 && npm run start",
+    "start:demo-vue2": "cd demo-vue2 && npm run serve",
+    "start:demo-vue3": "cd demo-vue3 && npm run serve",
     "build": "npm-run-all build:* && bash ./scripts/bundle.sh",
     "build:app1": "cd app1 && npm run build",
     "build:app2": "cd app2 && npm run build",
     "build:sub-html": "cd sub-html && npm run build",
-    "build:sub-react": "cd sub-react && npm run build",
     "build:sub-vue3-vite": "cd sub-vue3-vite && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
+
+
+
+    "install:sub-react": "cd sub-react && npm i",
+    "install:demo-react": "cd demo-react && npm i",
+    "start:demo-react": "cd demo-react && npm run serve",
+    "start:sub-react": "cd demo-react && npm run serve",
+    "build:demo-react": "cd demo-react && npm run build",
+    "build:sub-react": "cd sub-react && npm run build",
 
 ## 开始
 安装根目录工程依赖
