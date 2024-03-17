@@ -1,8 +1,10 @@
 const { name } = require('../package.json');
 const isDev = process.env.NODE_ENV === 'development';
+console.log("isDev:", isDev)
 
 module.exports = {
   'publicPath': isDev ? './' : '/apps/sub-vue2',
+  // outputDir:'dist'
   'chainWebpack': config => config.resolve.symlinks(false),
   'configureWebpack': {
     'output': {
