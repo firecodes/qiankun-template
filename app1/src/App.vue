@@ -30,6 +30,7 @@ header {
   a {
     font-weight: bold;
     color: #2c3e50;
+    margin-left: 10px;
 
     &.router-link-exact-active {
       color: #42b983;
