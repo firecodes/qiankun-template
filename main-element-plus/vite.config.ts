@@ -26,13 +26,16 @@ export default defineConfig(({ command, mode }) => {
     // root: process.cwd(), // 项目根目录（index.html 文件所在的位置）,
     // publicDir: 'public', // 静态资源服务的文件夹
     // envDir: "./env", // 环境变量的存储路径
-    base: !isBuild ? './' : '/apps/one/',
+    base: VITE_PUBLIC_PATH,
     logLevel: "info", // default
     clearScreen: false, // 默认值为true。调试时设置为false，可以看到更多信息
     resolve: {
       alias: {
         '@/': `${pathSrc}/`,
       },
+    },
+    define: {
+      // process: JSON.stringify(process || {})
     },
     css: {
       preprocessorOptions: {
