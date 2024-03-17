@@ -1,9 +1,9 @@
 const { name } = require('../package.json');
 const isDev = process.env.NODE_ENV === 'development';
-console.log("isDev:", isDev)
+console.log("process:", process)
 
 module.exports = {
-  'publicPath': isDev ? './' : '/apps/sub-vue2',
+  'publicPath': process.env.VITE_PUBLIC_PATH,
   // outputDir:'dist'
   'chainWebpack': config => config.resolve.symlinks(false),
   'configureWebpack': {
@@ -14,7 +14,7 @@ module.exports = {
       'jsonpFunction': `webpackJsonp_${name}`
     }
   },
-  'devServer': {
+  devServer: {
     'port': process.env.VUE_APP_PORT,
     'headers': {
       'Access-Control-Allow-Origin': '*'
