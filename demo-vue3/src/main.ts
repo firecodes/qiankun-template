@@ -10,6 +10,8 @@ import {
 
 const app = createApp(App);
 
+console.log("container---init", window);
+
 let instance: any = null;
 
 function render(props: any) {

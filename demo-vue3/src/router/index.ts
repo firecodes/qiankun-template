@@ -25,6 +25,12 @@ const routes: Array<RouteRecordRaw> = [
         meta: {},
         component: () => import("../views/About.vue"),
       },
+      {
+        path: `/${basePath}/Map`,
+        name: "Map",
+        meta: {},
+        component: () => import("../views/Map.vue"),
+      },
     ],
   },
 ];

@@ -1,0 +1,69 @@
+Your environment has been set up for using Node.js 18.18.2 (x64) and npm.
+
+C:\Users\Administrator>cd D:\vue-git\vue-qiankun-git\qiankun-template-dev-vue3D:\vue-git\vue-qiankun-git\qiankun-template-dev-vue3
+文件名、目录名或卷标语法不正确。
+
+C:\Users\Administrator>\cd D:\vue-git\vue-qiankun-git\qiankun-template-dev-vue3
+'\cd' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+C:\Users\Administrator>
+C:\Users\Administrator>
+C:\Users\Administrator>d:
+
+D:\>
+D:\>cd D:\vue-git\vue-qiankun-git\qiankun-template-dev-vue3
+
+D:\vue-git\vue-qiankun-git\qiankun-template-dev-vue3>
+D:\vue-git\vue-qiankun-git\qiankun-template-dev-vue3>
+D:\vue-git\vue-qiankun-git\qiankun-template-dev-vue3>
+D:\vue-git\vue-qiankun-git\qiankun-template-dev-vue3>cd D:\vue-git\vue-qiankun-git\qiankun-template-dev-vue3\demo-vue3
+
+D:\vue-git\vue-qiankun-git\qiankun-template-dev-vue3\demo-vue3>
+D:\vue-git\vue-qiankun-git\qiankun-template-dev-vue3\demo-vue3>npm run serve
+
+> web-demo-vue3@0.1.0 serve
+> vue-cli-service serve
+
+ INFO  Starting development server...
+98% after emitting CopyPlugin
+
+ WARNING  Compiled with 2 warnings                                                                              02:10:33
+
+Module Warning (from ./node_modules/eslint-loader/index.js):
+
+D:\vue-git\vue-qiankun-git\qiankun-template-dev-vue3\demo-vue3\src\main.ts
+   5:9   warning  Replace `·createRouter,·createWebHistory,·createWebHashHistory·` with `⏎··createRouter,⏎··createWebHistory,⏎··createWebHashHistory,⏎`  prettier/prettier
+   5:24  warning  'createWebHistory' is defined but never used                                                                                           @typescript-eslint/no-unused-vars
+   7:7   warning  'app' is assigned a value but never used                                                                                               @typescript-eslint/no-unused-vars
+  21:3   warning  'instance' is assigned a value but never used                                                                                          @typescript-eslint/no-unused-vars
+  34:8   warning  Missing return type on function                                                                                                        @typescript-eslint/explicit-module-boundary-types
+  41:8   warning  Missing return type on function                                                                                                        @typescript-eslint/explicit-module-boundary-types
+  41:29  warning  Argument 'props' should be typed with a non-any type                                                                                   @typescript-eslint/explicit-module-boundary-types
+  49:8   warning  Missing return type on function                                                                                                        @typescript-eslint/explicit-module-boundary-types
+
+✖ 8 problems (0 errors, 8 warnings)
+  0 errors and 1 warning potentially fixable with the `--fix` option.
+
+
+Module Warning (from ./node_modules/eslint-loader/index.js):
+
+D:\vue-git\vue-qiankun-git\qiankun-template-dev-vue3\demo-vue3\src\public-path.ts
+  2:1  warning  Replace `↹` with `··`  prettier/prettier
+
+✖ 1 problem (0 errors, 1 warning)
+  0 errors and 1 warning potentially fixable with the `--fix` option.
+
+
+You may use special comments to disable some warnings.
+Use // eslint-disable-next-line to ignore the next line.
+Use /* eslint-disable */ to ignore all warnings in a file.
+
+  App running at:
+  - Local:   http://localhost:9008/
+  - Network: http://192.168.100.224:9008/
+
+  Note that the development build is not optimized.
+  To create a production build, run npm run build.
+
+No issues found.

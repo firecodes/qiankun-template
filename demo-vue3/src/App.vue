@@ -1,7 +1,8 @@
 <template>
   <div id="nav">
     <router-link to="/demo-vue3/index">Home</router-link> |
-    <router-link to="/demo-vue3/about">About</router-link>
+    <router-link to="/demo-vue3/about">About</router-link> |
+    <router-link to="/demo-vue3/Map">Map</router-link>
   </div>
   <router-view v-slot="{ Component }">
     <keep-alive>
@@ -25,6 +26,7 @@
   a {
     font-weight: bold;
     color: #2c3e50;
+    margin-left: 10px;
 
     &.router-link-exact-active {
       color: #42b983;

@@ -74,6 +74,21 @@ function registerApps() {
             credentials: 'include',
           });
         }
+        // if (url.include('/demo-vue3')) {
+        //   return window.fetch(url, {
+        //     ...args,
+        //     mode: 'cors',
+        //     credentials: 'include',
+        //   });
+        // }
+        // http://localhost:9008/#/demo-vue3/Map
+        // if (url.include('//api.map.baidu.com')) {
+        //   return window.fetch(url, {
+        //     ...args,
+        //     mode: 'cors',
+        //     credentials: 'include',
+        //   });
+        // }
         return window.fetch(url, ...args);
       }
     });
