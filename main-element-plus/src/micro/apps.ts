@@ -6,7 +6,7 @@ const getActiveRule = (hash: any) => (location: any) => location.hash.startsWith
 const apps: any[] = [
 	{
 		name: `app1`,
-		entry: utils.env.isDev ? `http://localhost:9001/` : `${utils.env.getRootPath()}app1`,
+		entry: utils.env.isDev ? `http://localhost:9001/` : `${utils.env.getRootPath()}app1/`,
 		container: `#container`,
 		// activeRule: `${utils.env.getPublicPath()}#/app1`
 		activeRule: getActiveRule(`#/app1`),
@@ -16,7 +16,7 @@ const apps: any[] = [
 	},
 	{
 		name: `app2`,
-		entry: utils.env.isDev ? `http://localhost:9002/` : `${utils.env.getRootPath()}app2`,
+		entry: utils.env.isDev ? `http://localhost:9002/` : `${utils.env.getRootPath()}app2/`,
 		container: `#container`,
 		activeRule: `${utils.env.getPublicPath()}#/app2`,
 		// activeRule: getActiveRule(`#/app2`),
@@ -26,7 +26,7 @@ const apps: any[] = [
 	},
 	{
 		name: `sub-html`,
-		entry: utils.env.isDev ? `http://localhost:9003/` : `${utils.env.getRootPath()}sub-html`,
+		entry: utils.env.isDev ? `http://localhost:9003/` : `${utils.env.getRootPath()}sub-html/`,
 		container: `#container`,
 		// activeRule: `${utils.env.getPublicPath()}#/sub-html`,
 		activeRule: getActiveRule(`#/sub-html`),
@@ -36,13 +36,13 @@ const apps: any[] = [
 	},
 	{
 		name: `sub-react`,
-		entry: utils.env.isDev ? `http://localhost:9004/` : `${utils.env.getRootPath()}sub-react`,
+		entry: utils.env.isDev ? `http://localhost:9004/` : `${utils.env.getRootPath()}sub-react/`,
 		container: `#container`,
 		activeRule: `${utils.env.getPublicPath()}#/sub-react`
 	},
 	{
 		name: `sub-vue3-vite`,
-		entry: utils.env.isDev ? `http://localhost:9005/` : `${utils.env.getRootPath()}sub-vue3-vite`,
+		entry: utils.env.isDev ? `http://localhost:9005/` : `${utils.env.getRootPath()}sub-vue3-vite/`,
 		container: `#container`,
 		activeRule: `${utils.env.getPublicPath()}#/sub-vue3-vite`
 		// activeRule: getActiveRule(`#/sub-vue3-vite`)
@@ -55,21 +55,21 @@ const apps: any[] = [
 	// },
 	{
 		name: `demo-vue2`,
-		entry: utils.env.isDev ? `http://localhost:9007/` : `${utils.env.getRootPath()}demo-vue2`,
+		entry: utils.env.isDev ? `http://localhost:9007/` : `${utils.env.getRootPath()}demo-vue2/`,
 		container: `#container`,
 		// activeRule: `${utils.env.getPublicPath()}#/demo-vue2`
 		activeRule: getActiveRule(`#/demo-vue2`)
 	},
 	{
 		name: `demo-vue3`,
-		entry: utils.env.isDev ? `http://localhost:9008/` : `${utils.env.getRootPath()}demo-vue3`,
+		entry: utils.env.isDev ? `http://localhost:9008/` : `${utils.env.getRootPath()}demo-vue3/`,
 		container: `#container`,
 		// activeRule: `${utils.env.getPublicPath()}#/demo-vue3`
 		activeRule: getActiveRule(`#/demo-vue3`)
 	},
 	{
 		name: `sub-vue2`,
-		entry: utils.env.isDev ? `http://localhost:9009/` : `${utils.env.getRootPath()}sub-vue2`,
+		entry: utils.env.isDev ? `http://localhost:9009/` : `${utils.env.getRootPath()}sub-vue2/`,
 		container: `#container`,
 		activeRule: `${utils.env.getPublicPath()}#/sub-vue2`
 	},
