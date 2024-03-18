@@ -1,10 +1,11 @@
 
 import axios from 'axios'
 import { setupInterceptors } from './interceptors'
+import * as env from '../env'
 
 export function createAxios(options = {}) {
   const defaultOptions = {
-    baseURL: '/api',
+    baseURL: env.isProd ? env.getProxyTarget() : '/api',
     timeout: 12000,
   }
   const service = axios.create({
@@ -16,7 +17,3 @@ export function createAxios(options = {}) {
 }
 
 export const request = createAxios()
-
-export const mockRequest = createAxios({
-  baseURL: '/mock-api',
-})
