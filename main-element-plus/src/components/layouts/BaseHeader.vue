@@ -6,9 +6,20 @@ const { appContext: { config: { globalProperties: global } } }: any = getCurrent
 import * as utils from '@/utils'
 
 const goApp = (path: string) => {
+  const state = { page_id: 1, user_id: 5 };
   const fullPath = `${utils.env.getPublicPath()}#/${path}`;
-  history.pushState({}, fullPath, fullPath);
+  history.pushState(state, "", fullPath);
   // history.pushState(null, item.activeRule, item.activeRule)
+
+  // const state = { page_id: 1, user_id: 5 };
+  // const url = "hello-world.html";
+  // history.pushState(state, "", url);
+
+}
+const goUrl = function () {
+  const url = new URL(window.location);
+  url.searchParams.set("foo", "bar");
+  history.pushState({}, "", url);
 }
 
 const page = {

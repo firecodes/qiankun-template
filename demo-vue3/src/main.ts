@@ -2,11 +2,15 @@ import "./public-path";
 import { createApp } from "vue";
 import App from "./App.vue";
 import routes from "./router";
-import { createRouter, createWebHistory, createWebHashHistory } from "vue-router";
+import {
+  createRouter,
+  createWebHistory,
+  createWebHashHistory,
+} from "vue-router";
 
 const app = createApp(App);
 
-let instance = null;
+let instance: any = null;
 
 function render(props: any) {
   const { container } = props;
@@ -40,6 +44,11 @@ export async function bootstrap() {
  */
 export async function mount(props: any) {
   console.log("mount", props);
+  props.onGlobalStateChange((state: any, prev: any) => {
+    // state: 变更后的状态; prev 变更前的状态
+    console.log("props.onGlobalStateChange:", state, prev);
+  });
+  props.setGlobalState({ project: "demo-vue3" });
   render(props);
 }
 
@@ -47,6 +56,5 @@ export async function mount(props: any) {
  * unmount ：应用每次 切出/卸载 均会调用
  */
 export async function unmount() {
-  // console.log("unmount");
-  // app.unmount();
+  console.log("unmount", instance);
 }

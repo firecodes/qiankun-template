@@ -1,7 +1,25 @@
 import NProgress from "nprogress";
-import { addGlobalUncaughtErrorHandler, registerMicroApps, start } from "qiankun";
+import { setDefaultMountApp, runAfterFirstMounted, removeGlobalUncaughtErrorHandler, addGlobalUncaughtErrorHandler, registerMicroApps, start } from "qiankun";
+import { initGlobalState, MicroAppStateActions } from 'qiankun';
+
 import apps from "./apps";
-console.log("registerApps:", apps)
+
+// 初始化 state
+const state = {
+  apps,
+  mode: 'cors',
+  credentials: 'include',
+  name: 'state',
+}
+const actions: MicroAppStateActions = initGlobalState(state);
+actions.onGlobalStateChange((state, prev) => {
+  // state: 变更后的状态; prev 变更前的状态
+  console.log("onGlobalStateChange", state, prev);
+});
+actions.setGlobalState(state);
+actions.offGlobalStateChange();
+
+console.log("registerApps:", apps, state)
 /**
  * 注册微应用
  * 第一个参数 - 微应用的注册信息
@@ -31,7 +49,37 @@ function registerApps() {
         return Promise.resolve();
       }
     });
-    start({ prefetch: true, sandbox: {} });
+    start({
+      singular: false,
+      prefetch: false,
+      sandbox: { experimentalStyleIsolation: true },
+      getTemplate(tpl) {
+        return tpl.replace('<script src="/to-be-replaced.js"><script>', '');
+      },
+      // excludeAssetFilter(assetUrl: string) {
+      //   console.log("excludeAssetFilter mount", assetUrl);
+      //   return false
+      // },
+      async fetch(url: any, ...args) {
+        if (url === 'http://to-be-replaced.js') {
+          return {
+            async text() { return ''; },
+          };
+        }
+        // 给指定的微应用 entry 开启跨域请求
+        if (url === 'http://app.alipay.com/entry.html') {
+          return window.fetch(url, {
+            ...args,
+            mode: 'cors',
+            credentials: 'include',
+          });
+        }
+        return window.fetch(url, ...args);
+      }
+    });
+    // setDefaultMountApp('/app1');
+    // 第一个微应用 mount 后需要调用的方法，比如开启一些监控或者埋点脚本
+    // runAfterFirstMounted(() => startMonitor());
     // start({ prefetch: true, sandbox: {strictStyleIsolation: true} });
     // 
     // start({
@@ -49,7 +97,9 @@ function registerApps() {
  * 添加全局的未捕获异常处理器
  */
 addGlobalUncaughtErrorHandler((event: Event | string) => {
-  console.error(event);
+  console.error("addGlobalUncaughtErrorHandler===", event);
 });
-
+removeGlobalUncaughtErrorHandler((event: Event | string) => {
+  console.error("removeGlobalUncaughtErrorHandler===", event);
+});
 export default registerApps
