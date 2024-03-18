@@ -1,8 +1,9 @@
 const isDev = process.env.NODE_ENV === "development";
-// console.log("process:", process);
 // import { name } from './package.json'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { name } = require("./package.json");
+
+console.log("process.env:", process.env, name);
 
 module.exports = {
   publicPath: process.env.VITE_PUBLIC_PATH,

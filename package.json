@@ -17,7 +17,7 @@
     "install:demo-vue2": "cd demo-vue2 && npm i",
     "install:demo-vue3": "cd demo-vue3 && npm i",
     "start": "npm-run-all --parallel start:*",
-    "start:sub-vue2": "cd sub-vue2 && npm run start",
+    "start:demo-vue3": "cd demo-vue3 && npm run serve",
     "build": "npm-run-all build:*",
     "build:app1": "cd app1 && npm run build",
     "build:app2": "cd app2 && npm run build",

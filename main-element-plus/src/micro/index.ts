@@ -1,7 +1,7 @@
 import NProgress from "nprogress";
 import { addGlobalUncaughtErrorHandler, registerMicroApps, start } from "qiankun";
 import apps from "./apps";
-
+console.log("registerApps:", apps)
 /**
  * 注册微应用
  * 第一个参数 - 微应用的注册信息

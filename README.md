@@ -24,6 +24,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
 
 
+    "start:sub-vue2": "cd sub-vue2 && npm run start",
 
     "install:sub-react": "cd sub-react && npm i",
     "install:demo-react": "cd demo-react && npm i",
