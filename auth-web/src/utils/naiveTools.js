@@ -93,12 +93,8 @@ export function setupDialog(NDialog) {
 }
 
 export function setupNaiveDiscreteApi() {
-  const configProviderProps = computed(() => ({
-    theme: appStore.isDark ? NaiveUI.darkTheme : undefined,
-  }))
   const { message, dialog, notification, loadingBar } = NaiveUI.createDiscreteApi(
-    ['message', 'dialog', 'notification', 'loadingBar'],
-    { configProviderProps }
+    ['message', 'dialog', 'notification', 'loadingBar']
   )
 
   window.$loadingBar = loadingBar
