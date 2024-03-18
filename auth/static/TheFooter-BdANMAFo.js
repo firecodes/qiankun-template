@@ -1,0 +1,1 @@
+import{ao as e,ac as t,a1 as o,a2 as c}from"./index-BbJXWasg.js";const s={},_={class:"f-c-c text-14 text-gray-500"},n=c("p",null," Copyright © 2023 ",-1),a=[n];function r(i,p){return t(),o("footer",_,a)}const l=e(s,[["render",r]]);export{l as _};
