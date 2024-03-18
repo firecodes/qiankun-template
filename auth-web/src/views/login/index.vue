@@ -59,7 +59,6 @@ import { useStorage } from '@vueuse/core'
 import api from '@/api'
 import { useAuthStore } from '@/store'
 import { initUserAndPermissions } from '@/router'
-
 const authStore = useAuthStore()
 const title = import.meta.env.VITE_TITLE
 
@@ -95,6 +94,7 @@ async function handleLogin(isQuick) {
     loading.value = true
     $message.loading('正在验证，请稍后...', { key: 'login' })
     const { data } = await api.login({ username, password: password.toString(), captcha, isQuick })
+
     if (isRemember.value) {
       lStorage.set('loginInfo', { username, password })
     } else {

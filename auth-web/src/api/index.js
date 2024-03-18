@@ -1,4 +1,6 @@
 import { request } from '@/utils'
+import * as utils from '@/utils'
+import LoginJson from '@/mock/login.json'
 
 export default {
   // 获取用户信息
@@ -13,5 +15,5 @@ export default {
   validateMenuPath: (path) => request.get(`/permission/menu/validate?path=${path}`),
 
   toggleRole: (data) => request.post('/auth/role/toggle', data),
-  login: (data) => request.post('/auth/login', data, { noNeedToken: true }),
+  login: (data) => utils.isProd ? LoginJson : request.post('/auth/login', data, { noNeedToken: true }),
 }

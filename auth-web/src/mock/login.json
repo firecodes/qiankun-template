@@ -1,0 +1,8 @@
+{
+  "code": 0,
+  "message": "OK",
+  "data": {
+    "accessToken": "access-token:admin:super-admin"
+  },
+  "originUrl": "/auth/login"
+}
