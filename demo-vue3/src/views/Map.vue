@@ -1,5 +1,5 @@
 <template>
-  <div id="container"></div>
+  <div id="containerPageMap"></div>
 </template>
 
 <script setup lang="ts">
@@ -601,14 +601,14 @@ option = {
   ],
 };
 nextTick(() => {
-  var chartDom = document.getElementById("container");
+  var chartDom = document.getElementById("containerPageMap");
   var myChart = echarts.init(chartDom);
   option && myChart.setOption(option);
 });
 </script>
 
 <style lang="less">
-#container {
+#containerPageMap {
   width: 100%;
   height: 500px;
 }

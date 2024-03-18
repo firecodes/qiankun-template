@@ -52,7 +52,7 @@ function registerApps() {
     start({
       singular: false,
       prefetch: false,
-      sandbox: { experimentalStyleIsolation: true },
+      // sandbox: { experimentalStyleIsolation: true },
       getTemplate(tpl) {
         return tpl.replace('<script src="/to-be-replaced.js"><script>', '');
       },
@@ -60,6 +60,12 @@ function registerApps() {
       //   console.log("excludeAssetFilter mount", assetUrl);
       //   return false
       // },
+      excludeAssetFilter: (assetUrl) => {
+        const whiteList: any = [];
+        const whiteWords = ['baidu', 'map'];
+        if (whiteList.includes(assetUrl)) { return true; }
+        return whiteWords.some((w) => assetUrl.includes(w));
+      },
       async fetch(url: any, ...args) {
         if (url === 'http://to-be-replaced.js') {
           return {
