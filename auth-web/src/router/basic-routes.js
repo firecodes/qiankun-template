@@ -1,4 +1,8 @@
 export const basicRoutes = [{
+  path: '/',
+  name: '',
+  redirect: `/login`,
+}, {
   name: 'Login',
   path: '/login',
   component: () => import('@/views/login/index.vue'),

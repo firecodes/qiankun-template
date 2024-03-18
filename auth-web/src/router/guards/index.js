@@ -22,7 +22,7 @@ export function setupRouterGuards(router) {
     }
 
     // 有token的情况
-    if (to.path === '/login') return { path: '/' }
+    if (to.path === '/login') { authStore.toHome() }
     if (WHITE_LIST.includes(to.path)) return true
 
     console.log("setupRouterGuards authStore2", token, authStore)
