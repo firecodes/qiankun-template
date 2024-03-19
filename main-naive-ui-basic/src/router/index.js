@@ -36,9 +36,9 @@ export async function initUserAndPermissions() {
   const [user, permissions] = await Promise.all([getUserInfo(), getPermissions()]);
   userStore.setUser(user);
   permissionStore.setPermissions(permissions);
-  const routeComponents = import.meta.glob("@/views/**/*.vue");
-  permissionStore.accessRoutes.forEach((route) => {
-    route.component = routeComponents[route.component] || undefined;
-    !router.hasRoute(route.name) && router.addRoute(route);
-  });
+  // const routeComponents = import.meta.glob("@/views/**/*.vue");
+  // permissionStore.accessRoutes.forEach((route) => {
+  //   route.component = routeComponents[route.component] || undefined;
+  //   !router.hasRoute(route.name) && router.addRoute(route);
+  // });
 }

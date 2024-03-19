@@ -1,6 +1,11 @@
 export const basicRoutes = [
   {
-    path: "/",
+    path: '/',
+    name: '',
+    redirect: "/home",
+  },
+  {
+    path: "/home",
     name: "Home",
     component: () => import("@/views/home/index.vue"),
     meta: {
@@ -22,15 +27,14 @@ export const basicRoutes = [
     component: () => import("@/views/error-page/403.vue"),
     meta: {
       title: "没有权限",
-      layout: "empty",
     },
   },
-  // {
-  //   path: "/profile",
-  //   name: "profile",
-  //   component: () => import("@/views/profile/index.vue"),
-  //   meta: {
-  //     title: "个人资料",
-  //   },
-  // },
+  {
+    path: "/profile",
+    name: "profile",
+    component: () => import("@/views/profile/index.vue"),
+    meta: {
+      title: "个人资料",
+    },
+  },
 ];
