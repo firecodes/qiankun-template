@@ -1,21 +1,6 @@
-<!--------------------------------
- - @Author: Ronnie Zhang
- - @LastEditor: Ronnie Zhang
- - @LastEditTime: 2024/01/13 17:41:38
- - @Email: zclzone@outlook.com
- - Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
- --------------------------------->
-
 <template>
-  <n-modal
-    v-model:show="show"
-    class="modal-box"
-    :style="{ width: modalOptions.width, ...modalOptions.modalStyle }"
-    :preset="undefined"
-    size="huge"
-    :bordered="false"
-    @after-leave="onAfterLeave"
-  >
+  <n-modal v-model:show="show" class="modal-box" :style="{ width: modalOptions.width, ...modalOptions.modalStyle }"
+    :preset="undefined" size="huge" :bordered="false" @after-leave="onAfterLeave">
     <n-card :style="modalOptions.contentStyle" :closable="modalOptions.closable" @close="close()">
       <template #header>
         <header class="modal-header">{{ modalOptions.title }}</header>
@@ -29,13 +14,8 @@
           <n-button v-if="modalOptions.showCancel" @click="handleCancel()">
             {{ modalOptions.cancelText }}
           </n-button>
-          <n-button
-            v-if="modalOptions.showOk"
-            type="primary"
-            :loading="modalOptions.okLoading"
-            class="ml-20"
-            @click="handleOk()"
-          >
+          <n-button v-if="modalOptions.showOk" type="primary" :loading="modalOptions.okLoading" class="ml-20"
+            @click="handleOk()">
             {{ modalOptions.okText }}
           </n-button>
         </footer>
@@ -81,19 +61,19 @@ const props = defineProps({
   },
   modalStyle: {
     type: Object,
-    default: () => {},
+    default: () => { },
   },
   contentStyle: {
     type: Object,
-    default: () => {},
+    default: () => { },
   },
   onOk: {
     type: Function,
-    default: () => {},
+    default: () => { },
   },
   onCancel: {
     type: Function,
-    default: () => {},
+    default: () => { },
   },
 })
 // 声明一个show变量，用于控制模态框的显示与隐藏

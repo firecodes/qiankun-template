@@ -29,7 +29,6 @@
     "@unocss/eslint-config": "^0.58.5",
     "@unocss/preset-rem-to-px": "^0.58.5",
     "@vitejs/plugin-vue": "^5.0.4",
-    "@zclzone/eslint-config": "^0.0.5",
     "esno": "^4.0.0",
     "fs-extra": "^11.2.0",
     "glob": "^10.3.10",
@@ -43,7 +42,6 @@
   },
   "eslintConfig": {
     "extends": [
-      "@zclzone",
       "@unocss",
       ".eslint-global-variables.json"
     ],

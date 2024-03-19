@@ -5,7 +5,8 @@
     "moduleResolution": "node",
     "paths": {
       "@/*": ["src/*"],
-      "~/*": ["./*"]
+      "~/*": ["./*"],
+      "@mock*": ["mock/*"]
     },
     "jsx": "preserve",
     "allowJs": true

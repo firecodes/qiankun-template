@@ -1,38 +1,16 @@
-<!--------------------------------
- - @Author: Ronnie Zhang
- - @LastEditor: Ronnie Zhang
- - @LastEditTime: 2023/12/16 18:50:54
- - @Email: zclzone@outlook.com
- - Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
- --------------------------------->
-
 <template>
   <div>
-    <n-tabs
-      :value="tabStore.activeTab"
-      :closable="tabStore.tabs.length > 1"
-      :style="`--selected-bg: ${appStore.isDark ? '#1b2429' : '#eaf0f1'}`"
-      type="card"
-      @close="(path) => tabStore.removeTab(path)"
-    >
-      <n-tab
-        v-for="item in tabStore.tabs"
-        :key="item.path"
-        :name="item.path"
-        @click="handleItemClick(item.path)"
-        @contextmenu.prevent="handleContextMenu($event, item)"
-      >
+    <n-tabs :value="tabStore.activeTab" :closable="tabStore.tabs.length > 1"
+      :style="`--selected-bg: ${appStore.isDark ? '#1b2429' : '#eaf0f1'}`" type="card"
+      @close="(path) => tabStore.removeTab(path)">
+      <n-tab v-for="item in tabStore.tabs" :key="item.path" :name="item.path" @click="handleItemClick(item.path)"
+        @contextmenu.prevent="handleContextMenu($event, item)">
         {{ item.title }}
       </n-tab>
     </n-tabs>
 
-    <ContextMenu
-      v-if="contextMenuOption.show"
-      v-model:show="contextMenuOption.show"
-      :current-path="contextMenuOption.currentPath"
-      :x="contextMenuOption.x"
-      :y="contextMenuOption.y"
-    />
+    <ContextMenu v-if="contextMenuOption.show" v-model:show="contextMenuOption.show"
+      :current-path="contextMenuOption.currentPath" :x="contextMenuOption.x" :y="contextMenuOption.y" />
   </div>
 </template>
 
@@ -84,14 +62,17 @@ async function handleContextMenu(e, tagItem) {
     background: transparent !important;
     border-radius: 4px !important;
     margin-right: 4px;
+
     &:hover {
       border: 1px solid var(--primary-color) !important;
     }
   }
+
   .n-tabs-tab--active {
     border: 1px solid var(--primary-color) !important;
     background-color: var(--selected-bg) !important;
   }
+
   .n-tabs-pad,
   .n-tabs-tab-pad,
   .n-tabs-scroll-padding {

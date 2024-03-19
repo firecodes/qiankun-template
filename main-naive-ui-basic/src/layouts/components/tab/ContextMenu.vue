@@ -1,21 +1,6 @@
-<!--------------------------------
- - @Author: Ronnie Zhang
- - @LastEditor: Ronnie Zhang
- - @LastEditTime: 2023/12/16 18:50:48
- - @Email: zclzone@outlook.com
- - Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
- --------------------------------->
-
 <template>
-  <n-dropdown
-    :show="show"
-    :options="options"
-    :x="x"
-    :y="y"
-    placement="bottom-start"
-    @clickoutside="handleHideDropdown"
-    @select="handleSelect"
-  />
+  <n-dropdown :show="show" :options="options" :x="x" :y="y" placement="bottom-start" @clickoutside="handleHideDropdown"
+    @select="handleSelect" />
 </template>
 
 <script setup>

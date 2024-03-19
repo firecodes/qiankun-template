@@ -1,11 +1,3 @@
-/**********************************
- * @FilePath: is.js
- * @Author: Ronnie Zhang
- * @LastEditor: Ronnie Zhang
- * @LastEditTime: 2023/12/04 22:45:32
- * @Email: zclzone@outlook.com
- * Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
- **********************************/
 
 const toString = Object.prototype.toString
 
@@ -98,13 +90,7 @@ export function isEmpty(val) {
   return false
 }
 
-/**
- * * 类似mysql的IFNULL函数
- * * 第一个参数为null/undefined/'' 则返回第二个参数作为备用值，否则返回第一个参数
- * @param {Number|Boolean|String} val
- * @param {Number|Boolean|String} def
- * @returns
- */
+
 export function ifNull(val, def = '') {
   return isNullOrWhitespace(val) ? def : val
 }
@@ -115,10 +101,6 @@ export function isUrl(path) {
   return reg.test(path)
 }
 
-/**
- * @param {string} path
- * @returns {Boolean}
- */
 export function isExternal(path) {
   return /^(https?:|mailto:|tel:)/.test(path)
 }

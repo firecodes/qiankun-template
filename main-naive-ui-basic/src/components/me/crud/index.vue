@@ -1,11 +1,3 @@
-<!--------------------------------
- - @Author: Ronnie Zhang
- - @LastEditor: Ronnie Zhang
- - @LastEditTime: 2023/12/04 22:51:42
- - @Email: zclzone@outlook.com
- - Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
- --------------------------------->
-
 <template>
   <AppCard v-if="$slots.default" bordered bg="#fafafc dark:black" class="mb-30 min-h-60 rounded-4">
     <form class="flex justify-between p-16" @submit.prevent="handleSearch()">
@@ -25,17 +17,9 @@
     </form>
   </AppCard>
 
-  <n-data-table
-    :remote="remote"
-    :loading="loading"
-    :scroll-x="scrollX"
-    :columns="columns"
-    :data="tableData"
-    :row-key="(row) => row[rowKey]"
-    :pagination="isPagination ? pagination : false"
-    @update:checked-row-keys="onChecked"
-    @update:page="onPageChange"
-  />
+  <n-data-table :remote="remote" :loading="loading" :scroll-x="scrollX" :columns="columns" :data="tableData"
+    :row-key="(row) => row[rowKey]" :pagination="isPagination ? pagination : false" @update:checked-row-keys="onChecked"
+    @update:page="onPageChange" />
 </template>
 
 <script setup>

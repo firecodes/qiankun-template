@@ -1,11 +1,3 @@
-<!--------------------------------
- - @Author: Ronnie Zhang
- - @LastEditor: Ronnie Zhang
- - @LastEditTime: 2023/12/16 18:49:53
- - @Email: zclzone@outlook.com
- - Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
- --------------------------------->
-
 <template>
   <div>
     <n-tooltip trigger="hover" placement="left">
@@ -15,13 +7,7 @@
       布局设置
     </n-tooltip>
 
-    <MeModal
-      ref="modalRef"
-      title="布局设置"
-      :show-footer="false"
-      width="600px"
-      :modal-style="{ opacity: 0.85 }"
-    >
+    <MeModal ref="modalRef" title="布局设置" :show-footer="false" width="600px" :modal-style="{ opacity: 0.85 }">
       <n-space justify="space-between">
         <div class="flex-col cursor-pointer justify-center" @click="appStore.setLayout('simple')">
           <div class="flex">
@@ -30,12 +16,7 @@
               <n-skeleton :width="80" :height="60" />
             </div>
           </div>
-          <n-button
-            class="mt-12"
-            size="small"
-            :type="appStore.layout === 'simple' ? 'primary' : ''"
-            ghost
-          >
+          <n-button class="mt-12" size="small" :type="appStore.layout === 'simple' ? 'primary' : ''" ghost>
             简约
           </n-button>
         </div>
@@ -47,12 +28,7 @@
               <n-skeleton class="mt-4" :width="80" :height="46" />
             </div>
           </div>
-          <n-button
-            class="mt-12"
-            size="small"
-            :type="appStore.layout === 'normal' ? 'primary' : ''"
-            ghost
-          >
+          <n-button class="mt-12" size="small" :type="appStore.layout === 'normal' ? 'primary' : ''" ghost>
             通用
           </n-button>
         </div>
@@ -66,12 +42,7 @@
               <n-skeleton class="mt-4" :width="80" :height="42" />
             </div>
           </div>
-          <n-button
-            class="mt-12"
-            size="small"
-            :type="appStore.layout === 'full' ? 'primary' : ''"
-            ghost
-          >
+          <n-button class="mt-12" size="small" :type="appStore.layout === 'full' ? 'primary' : ''" ghost>
             全面
           </n-button>
         </div>
@@ -79,12 +50,7 @@
           <div class="flex">
             <n-skeleton :width="104" :height="60" />
           </div>
-          <n-button
-            class="mt-12"
-            size="small"
-            :type="appStore.layout === 'empty' ? 'primary' : ''"
-            ghost
-          >
+          <n-button class="mt-12" size="small" :type="appStore.layout === 'empty' ? 'primary' : ''" ghost>
             空白
           </n-button>
         </div>

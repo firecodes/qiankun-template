@@ -1,27 +1,12 @@
-<!--------------------------------
- - @Author: Ronnie Zhang
- - @LastEditor: Ronnie Zhang
- - @LastEditTime: 2023/12/16 18:50:10
- - @Email: zclzone@outlook.com
- - Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
- --------------------------------->
-
 <template>
   <n-breadcrumb>
     <n-breadcrumb-item v-if="!breadItems?.length" :clickable="false">
       {{ route.meta.title }}
     </n-breadcrumb-item>
-    <n-breadcrumb-item
-      v-for="(item, index) of breadItems"
-      v-else
-      :key="item.code"
-      :clickable="!!item.path"
-      @click="handleItemClick(item)"
-    >
-      <n-dropdown
-        :options="index < breadItems.length - 1 ? getDropOptions(item.children) : []"
-        @select="handleDropSelect"
-      >
+    <n-breadcrumb-item v-for="(item, index) of breadItems" v-else :key="item.code" :clickable="!!item.path"
+      @click="handleItemClick(item)">
+      <n-dropdown :options="index < breadItems.length - 1 ? getDropOptions(item.children) : []"
+        @select="handleDropSelect">
         <div class="flex items-center">
           <i :class="item.icon" class="mr-8" />
           {{ item.name }}

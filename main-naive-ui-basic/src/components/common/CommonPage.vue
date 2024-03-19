@@ -1,28 +1,15 @@
-<!--------------------------------
- - @Author: Ronnie Zhang
- - @LastEditor: Ronnie Zhang
- - @LastEditTime: 2023/12/04 22:51:21
- - @Email: zclzone@outlook.com
- - Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
- --------------------------------->
-
 <template>
   <main class="h-full flex-1 overflow-hidden bg-#f5f6fb dark:bg-#121212">
     <div class="h-full flex-col">
-      <AppCard
-        v-if="showHeader"
-        class="sticky top-0 z-1 min-h-60 flex items-center justify-between px-24"
-        border-b="1px solid light_border dark:dark_border"
-      >
+      <AppCard v-if="showHeader" class="sticky top-0 z-1 min-h-60 flex items-center justify-between px-24"
+        border-b="1px solid light_border dark:dark_border">
         <slot v-if="$slots.header" name="header" />
         <template v-else>
           <div class="flex items-center">
             <slot v-if="$slots['title-prefix']" name="title-prefix" />
             <template v-else-if="back">
-              <div
-                class="mr-16 flex cursor-pointer items-center text-16 opacity-60 transition-all-300 hover:opacity-40"
-                @click="router.back()"
-              >
+              <div class="mr-16 flex cursor-pointer items-center text-16 opacity-60 transition-all-300 hover:opacity-40"
+                @click="router.back()">
                 <i class="i-material-symbols:arrow-left-alt" />
                 <span class="ml-4">返回</span>
               </div>

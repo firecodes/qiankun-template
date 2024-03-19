@@ -1,11 +1,3 @@
-<!--------------------------------
- - @Author: Ronnie Zhang
- - @LastEditor: Ronnie Zhang
- - @LastEditTime: 2023/12/05 21:28:22
- - @Email: zclzone@outlook.com
- - Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
- --------------------------------->
-
 <template>
   <AppPage show-footer>
     <div class="flex">
@@ -13,9 +5,7 @@
         <div class="flex items-center">
           <n-avatar round :size="60" :src="userStore.avatar" class="flex-shrink-0" />
           <div class="ml-20 flex-col">
-            <span class="text-20 opacity-80">
-              Hello, {{ userStore.nickName ?? userStore.username }}
-            </span>
+            <span class="text-20 opacity-80"> Hello, {{ userStore.nickName ?? userStore.username }} </span>
             <span class="mt-4 opacity-50">当前角色：{{ userStore.currentRole?.name }}</span>
           </div>
         </div>
@@ -25,40 +15,22 @@
       </n-card>
       <n-card class="ml-12 w-70%" title="✨ 欢迎使用 Vue Naive Admin 2.0">
         <template #header-extra>
-          <a
-            class="text-14 text-primary text-highlight hover:underline hover:opacity-80"
-            href="https://isme.top"
-            target="_blank"
-            @click.prevent="message?.info('官网正在火速开发中...')"
-          >
-            isme.top
-          </a>
+          <a class="text-14 text-primary text-highlight hover:underline hover:opacity-80"
+            href="https://firecodes.github.io/qiankun-template/" target="_blank"
+            @click.prevent="message?.info('官网正在火速开发中...')"> isme.top </a>
         </template>
 
         <p class="opacity-60">
-          这是一款极简风格的后台管理模板，包含前后端解决方案，前端使用 Vite + Vue3 + Pinia +
-          Unocss，后端使用 Nestjs + TypeOrm +
+          这是一款极简风格的后台管理模板，包含前后端解决方案，前端使用 Vite + Vue3 + Pinia + Unocss，后端使用 Nestjs + TypeOrm +
           MySql，简单易用，赏心悦目，历经十几次重构和细节打磨，诚意满满！！
         </p>
         <footer class="mt-12 flex items-center justify-end">
-          <n-button
-            type="primary"
-            ghost
-            tag="a"
-            href="https://docs.isme.top/web/#/624306705/188522224"
-            target="__blank"
-          >
+          <n-button type="primary" ghost tag="a" href="https://firecodes.github.io/qiankun-template/" target="__blank">
             开发文档
           </n-button>
-          <n-button
-            type="primary"
-            class="ml-12"
-            tag="a"
-            href="https://github.com/zclzone/vue-naive-admin/tree/2.x"
-            target="__blank"
-          >
-            代码仓库
-          </n-button>
+          <n-button type="primary" class="ml-12" tag="a" href="https://firecodes.github.io/qiankun-template/"
+            target="__blank">
+            代码仓库 </n-button>
         </footer>
       </n-card>
     </div>
@@ -154,130 +126,121 @@
 </template>
 
 <script setup>
-import { useUserStore } from '@/store'
-import * as echarts from 'echarts/core'
-import { TooltipComponent, GridComponent, LegendComponent } from 'echarts/components'
-import { BarChart, LineChart, PieChart } from 'echarts/charts'
-import { UniversalTransition } from 'echarts/features'
-import { CanvasRenderer } from 'echarts/renderers'
-import VChart from 'vue-echarts'
+import { useUserStore } from "@/store";
+import * as echarts from "echarts/core";
+import { TooltipComponent, GridComponent, LegendComponent } from "echarts/components";
+import { BarChart, LineChart, PieChart } from "echarts/charts";
+import { UniversalTransition } from "echarts/features";
+import { CanvasRenderer } from "echarts/renderers";
+import VChart from "vue-echarts";
 
-const userStore = useUserStore()
+const userStore = useUserStore();
 
-echarts.use([
-  TooltipComponent,
-  GridComponent,
-  LegendComponent,
-  BarChart,
-  LineChart,
-  CanvasRenderer,
-  UniversalTransition,
-  PieChart,
-])
+echarts.use([TooltipComponent, GridComponent, LegendComponent, BarChart, LineChart, CanvasRenderer, UniversalTransition, PieChart]);
 
 const trendOption = {
   tooltip: {
-    trigger: 'axis',
+    trigger: "axis",
     axisPointer: {
-      type: 'cross',
+      type: "cross",
       crossStyle: {
-        color: '#999',
+        color: "#999",
       },
     },
   },
   legend: {
-    top: '5%',
-    data: ['star', 'fork'],
+    top: "5%",
+    data: ["star", "fork"],
   },
   xAxis: [
     {
-      type: 'category',
-      data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+      type: "category",
+      data: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
       axisPointer: {
-        type: 'shadow',
+        type: "shadow",
       },
     },
   ],
   yAxis: [
     {
-      type: 'value',
+      type: "value",
       min: 0,
       max: 3000,
       interval: 500,
       axisLabel: {
-        formatter: '{value}',
+        formatter: "{value}",
       },
     },
     {
-      type: 'value',
+      type: "value",
       min: 0,
       max: 500,
       interval: 100,
       axisLabel: {
-        formatter: '{value}',
+        formatter: "{value}",
       },
     },
   ],
   series: [
     {
-      name: 'star',
-      type: 'line',
+      name: "star",
+      type: "line",
       data: [200, 320, 520, 550, 600, 805, 888, 950, 1300, 2503, 2702, 2712],
     },
     {
-      name: 'fork',
+      name: "fork",
       yAxisIndex: 1,
-      type: 'bar',
+      type: "bar",
       data: [40, 72, 110, 115, 121, 175, 180, 201, 260, 398, 423, 455],
     },
   ],
-}
+};
 
 const skillOption = {
   tooltip: {
-    trigger: 'item',
+    trigger: "item",
     formatter({ name, value }) {
-      return `${name} ${value}%`
+      return `${name} ${value}%`;
     },
   },
   legend: {
-    left: 'center',
+    left: "center",
   },
   series: [
     {
-      top: '12%',
-      type: 'pie',
-      radius: ['35%', '90%'],
+      top: "12%",
+      type: "pie",
+      radius: ["35%", "90%"],
       avoidLabelOverlap: true,
       itemStyle: {
         borderRadius: 10,
-        borderColor: '#fff',
+        borderColor: "#fff",
         borderWidth: 2,
       },
       label: {
         show: false,
-        position: 'center',
+        position: "center",
       },
       emphasis: {
         label: {
           show: true,
           fontSize: 36,
-          fontWeight: 'bold',
+          fontWeight: "bold",
         },
       },
       labelLine: {
         show: false,
       },
       data: [
-        { value: 38.5, name: 'Vue' },
-        { value: 37.0, name: 'JavaScript' },
-        { value: 6.5, name: 'CSS' },
-        { value: 6.2, name: 'HTML' },
-        { value: 1.8, name: 'Other' },
+        { value: 38.5, name: "Vue" },
+        { value: 37.0, name: "JavaScript" },
+        { value: 6.5, name: "CSS" },
+        { value: 6.2, name: "HTML" },
+        { value: 1.8, name: "Other" },
       ],
     },
   ],
-}
+};
 
-const message = $message
+const message = $message;
 </script>
