@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex-tabs-main">
     <n-tabs :value="tabStore.activeTab" :closable="tabStore.tabs.length > 1"
       :style="`--selected-bg: ${appStore.isDark ? '#1b2429' : '#eaf0f1'}`" type="card"
       @close="(path) => tabStore.removeTab(path)">
