@@ -7,7 +7,6 @@
     <div class="ml-auto flex flex-shrink-0 items-center px-12 text-18">
       <i class="mr-16 cursor-pointer" :class="isDark ? 'i-fe:moon' : 'i-fe:sun'" @click="toggleDark" />
       <i class="mr-16 cursor-pointer" :class="isFullscreen ? 'i-fe:minimize' : 'i-fe:maximize'" @click="toggle" />
-
       <i class="i-fe:github mr-16 cursor-pointer"
         @click="handleLinkClick('https://github.com/firecodes/qiankun-template')" />
       <i class="i-fe:github mr-16 cursor-pointer"

@@ -7,27 +7,22 @@ export const basicRoutes = [{
   path: "/home",
   name: "Home",
   component: () => import("@/views/home/index.vue"),
-  meta: {
-    title: "首页",
-  },
-},
-{
-  path: "/404",
-  name: "404",
-  component: () => import("@/views/error-page/404.vue"),
-  meta: {
-    title: "404 页面飞走了",
-    layout: "empty",
-  },
+  meta: {},
 },
 {
   path: "/403",
   name: "403",
   component: () => import("@/views/error-page/403.vue"),
+  meta: {},
+},
+{
+  path: "/*",
+  name: "404",
+  component: () => import("@/views/error-page/404.vue"),
   meta: {
-    title: "403 没有权限",
+    layout: "empty",
   },
-}];
+},];
 
 
 
@@ -219,22 +214,6 @@ export const basePermissions = [
         "show": true,
         "enable": true,
         "order": 2
-      }, {
-        "name": "404",
-        "code": "404",
-        "type": "MENU",
-        "parentId": 6,
-        "path": "/404",
-        "redirect": null,
-        "icon": "i-fe:image",
-        "component": "/src/views/error-page/404.vue",
-        "layout": "simple",
-        "keepAlive": true,
-        "method": null,
-        "description": null,
-        "show": true,
-        "enable": true,
-        "order": 3
       },
     ]
   },

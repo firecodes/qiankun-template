@@ -24,11 +24,16 @@ const authStore = useAuthStore()
 const permissionStore = usePermissionStore()
 
 const options = reactive([
+  // {
+  //   label: '个人资料',
+  //   key: 'profile',
+  //   icon: () => h('i', { class: 'i-material-symbols:person-outline text-14' }),
+  //   show: computed(() => permissionStore.accessRoutes?.some((item) => item.path === '/profile')),
+  // },
   {
-    label: '个人资料',
-    key: 'profile',
-    icon: () => h('i', { class: 'i-material-symbols:person-outline text-14' }),
-    show: computed(() => permissionStore.accessRoutes?.some((item) => item.path === '/profile')),
+    label: 'One element plus UI页面',
+    key: 'oneElementPlus',
+    icon: () => h('i', { class: 'i-basil:exchange-solid text-14' }),
   },
   {
     label: '切换角色',
@@ -46,6 +51,9 @@ const options = reactive([
 const roleSelectRef = ref(null)
 function handleSelect(key) {
   switch (key) {
+    case 'oneElementPlus':
+      window.open('https://firecodes.github.io/qiankun-template/one/')
+      break
     case 'profile':
       router.push('/profile')
       break
