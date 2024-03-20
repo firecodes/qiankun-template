@@ -1,5 +1,5 @@
 {
-  "name": "vue-naive-admin",
+  "name": "qiankun-main",
   "private": true,
   "version": "2.0.0",
   "type": "module",
@@ -10,12 +10,14 @@
     "lint:fix": "eslint --fix --ext .js,.vue ."
   },
   "dependencies": {
+    "nprogress": "^0.2.0",
     "@vueuse/core": "^10.9.0",
     "axios": "^1.6.7",
     "dayjs": "^1.11.10",
     "echarts": "^5.5.0",
     "lodash-es": "^4.17.21",
     "naive-ui": "^2.38.1",
+    "qiankun": "^2.10.16",
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",
     "vue": "^3.4.21",

@@ -15,12 +15,6 @@ export function formatDate(date = undefined, format = 'YYYY-MM-DD') {
   return formatDateTime(date, format)
 }
 
-/**
- * @desc  函数节流
- * @param {Function} fn
- * @param {Number} wait
- * @returns {Function}
- */
 export function throttle(fn, wait) {
   var context, args
   var previous = 0

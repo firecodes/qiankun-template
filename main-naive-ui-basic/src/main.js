@@ -6,7 +6,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import { setupRouter } from "./router";
 import { setupStore } from "./store";
-import { setupNaiveDiscreteApi } from "./utils";
+import { setupNaiveDiscreteApi } from "@/plugins";
 import { setupDirectives } from "./directives";
 
 async function bootstrap() {
