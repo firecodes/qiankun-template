@@ -1,0 +1,1 @@
+import{ao as e,ad as t,a3 as o,a4 as c}from"./index-CxVsTqK9.js";const s={},_={class:"f-c-c text-14 text-gray-500"},n=c("p",null," Copyright © 2023 ",-1),a=[n];function r(i,p){return t(),o("footer",_,a)}const f=e(s,[["render",r]]);export{f as _};
