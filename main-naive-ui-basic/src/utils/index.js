@@ -2,7 +2,9 @@
 export * from './common'
 export * from './http'
 export * from './is'
-export * from './naiveTools'
 export * from './storage'
-export * from './env'
+import * as envUtils from './env'
+
+
+export const env = envUtils
 

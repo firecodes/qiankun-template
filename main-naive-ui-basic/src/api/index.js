@@ -5,7 +5,7 @@ import apiRolePermissionsMenu from "@mock/apiRolePermissionsMenu.json";
 export default {
   // 获取用户信息
   getUser: () => {
-    return utils.isProd ? apiUserDetail : request.get("/user/detail");
+    return utils.env.isProd ? apiUserDetail : request.get("/user/detail");
   },
   // 刷新token
   refreshToken: () => request.get("/auth/refresh/token"),
@@ -15,7 +15,7 @@ export default {
   switchCurrentRole: (role) => request.post(`/auth/current-role/switch/${role}`),
   // 获取角色权限
   getRolePermissions: () => {
-    return apiRolePermissionsMenu; //utils.isProd ?  : request.get("/role/permissions/tree")
+    return apiRolePermissionsMenu; //utils.env.isProd ?  : request.get("/role/permissions/tree")
   },
   // 验证菜单路径
   validateMenuPath: (path) => request.get(`/permission/menu/validate?path=${path}`),

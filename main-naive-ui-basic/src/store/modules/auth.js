@@ -16,7 +16,7 @@ export const useAuthStore = defineStore("auth", {
     toLogin() {
       // const { router, route } = useRouterStore();
       // router.replace({ path: "/login", query: route.query });
-      if (utils.isProd) {
+      if (utils.env.isProd) {
         window.location.href = `../auth/#/login`;
       }
     },

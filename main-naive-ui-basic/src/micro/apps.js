@@ -3,7 +3,7 @@ import * as utils from '@/utils'
 console.log(`main one __process__:`, utils.env)
 const getActiveRule = (hash) => (location) => location.hash.startsWith(hash);
 
-const apps[] = [
+const apps = [
   {
     name: `app1`,
     entry: utils.env.isDev ? `http://localhost:9001/` : `${utils.env.getRootPath()}app1/`,

@@ -1,6 +1,6 @@
 import NProgress from "nprogress";
 import { setDefaultMountApp, runAfterFirstMounted, removeGlobalUncaughtErrorHandler, addGlobalUncaughtErrorHandler, registerMicroApps, start } from "qiankun";
-import { initGlobalState, MicroAppStateActions } from 'qiankun';
+import { initGlobalState } from 'qiankun';
 
 import apps from "./apps";
 
