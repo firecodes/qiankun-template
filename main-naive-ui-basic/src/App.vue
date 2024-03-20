@@ -3,12 +3,10 @@
     :theme="appStore.isDark ? darkTheme : undefined" :theme-overrides="appStore.naiveThemeOverrides">
     <router-view v-if="Layout" v-slot="{ Component, route: curRoute }">
       <component :is="Layout">
-        <template v-if="curRoute.fullPath">
-          <KeepAlive :include="keepAliveNames">
-            <component :is="Component" v-if="!tabStore.reloading" :key="curRoute.fullPath" />
-          </KeepAlive>
-        </template>
-        <div id="container" />
+        <KeepAlive :include="keepAliveNames">
+          <component v-show="curRoute.name" :is="Component" v-if="!tabStore.reloading" :key="curRoute.fullPath" />
+        </KeepAlive>
+        <AppPage v-show="!curRoute.name" id="container" show-footer></AppPage>
       </component>
       <LayoutSetting class="fixed right-12 top-1/2 z-999" />
     </router-view>
