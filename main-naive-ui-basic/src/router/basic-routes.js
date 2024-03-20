@@ -29,12 +29,4 @@ export const basicRoutes = [
       title: "没有权限",
     },
   },
-  {
-    path: "/profile",
-    name: "profile",
-    component: () => import("@/views/profile/index.vue"),
-    meta: {
-      title: "个人资料",
-    },
-  },
 ];

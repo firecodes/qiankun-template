@@ -7,6 +7,7 @@ const apps = [
   {
     name: `app1`,
     entry: utils.env.isDev ? `http://localhost:9001/` : `${utils.env.getRootPath()}app1/`,
+    // entry: utils.env.isDev ? `//localhost:80/qiankun-template/app1/` : `${utils.env.getRootPath()}app1/`,
     container: `#container`,
     // activeRule: `${utils.env.getPublicPath()}#/app1`
     activeRule: getActiveRule(`#/app1`),

@@ -8,9 +8,7 @@
             <component :is="Component" v-if="!tabStore.reloading" :key="curRoute.fullPath" />
           </KeepAlive>
         </template>
-        <template v-else>
-          <div id="container" />
-        </template>
+        <div id="container" />
       </component>
       <LayoutSetting class="fixed right-12 top-1/2 z-999" />
     </router-view>
@@ -37,7 +35,9 @@ const route = useRoute();
 const appStore = useAppStore();
 if (appStore.layout === "default") appStore.setLayout("");
 const Layout = computed(() => {
-  if (!route.matched?.length) return null;
+  console.log("Layout: computed", route)
+  // 非法路由进入，暂停使用
+  // if (!route.matched?.length) return null;
   return getLayout(route.meta?.layout || appStore.layout);
 });
 
