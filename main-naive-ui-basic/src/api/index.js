@@ -5,7 +5,7 @@ import apiRolePermissionsMenu from "@mock/apiRolePermissionsMenu.json";
 export default {
   // 获取用户信息
   getUser: () => {
-    return utils.env.isProd ? apiUserDetail : request.get("/user/detail");
+    return apiUserDetail // utils.env.isProd ? apiUserDetail : request.get("/user/detail");
   },
   // 刷新token
   refreshToken: () => request.get("/auth/refresh/token"),

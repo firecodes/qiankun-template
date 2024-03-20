@@ -2,7 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import { setupRouterGuards } from "./guards";
 import { useAuthStore, usePermissionStore, useUserStore } from "@/store";
 import { getPermissions, getUserInfo } from "@/store/helper";
-import { basicRoutes } from "./basic-routes";
+import { setRouteMenuMap, getRouteMenuMap, basicRoutes } from "./basic-routes";
 
 export const router = createRouter({
   history: createWebHashHistory(),
@@ -35,7 +35,9 @@ export async function initUserAndPermissions() {
   }
   const [user, permissions] = await Promise.all([getUserInfo(), getPermissions()]);
   userStore.setUser(user);
+  setRouteMenuMap(permissions)
   permissionStore.setPermissions(permissions);
+  console.log("getRouteMenuMap:", getRouteMenuMap())
   // const routeComponents = import.meta.glob("@/views/**/*.vue");
   // permissionStore.accessRoutes.forEach((route) => {
   //   route.component = routeComponents[route.component] || undefined;

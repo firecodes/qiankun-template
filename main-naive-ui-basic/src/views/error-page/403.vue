@@ -1,5 +1,5 @@
 <template>
-  <CommonPage :show-header="false">
+  <AppPage :show-header="false">
     <div class="wh-full flex">
       <n-result class="m-auto" status="403" title="403 禁止访问" description="抱歉，您暂无权限访问，请联系管理员开通权限。" size="large">
         <template #footer>
@@ -10,7 +10,7 @@
         </template>
       </n-result>
     </div>
-  </CommonPage>
+  </AppPage>
 </template>
 
 <script setup>

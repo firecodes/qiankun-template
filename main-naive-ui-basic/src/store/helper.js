@@ -1,4 +1,4 @@
-import { basePermissions } from "@/settings";
+import { basePermissions } from "@/router/basic-routes";
 import api from "@/api";
 
 export async function getUserInfo() {

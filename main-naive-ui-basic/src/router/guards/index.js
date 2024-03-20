@@ -1,4 +1,5 @@
 import { useTabStore, useAuthStore } from "@/store";
+import { getRouteMenuMap, rc, rcByPath } from "../basic-routes";
 const EXCLUDE_TAB = ["/404", "/403", "/login"];
 const WHITE_LIST = ["/404"];
 
@@ -38,13 +39,16 @@ export function setupRouterGuards(router) {
 
     // if (EXCLUDE_TAB.includes(to.path)) return;
     const tabStore = useTabStore();
-    const { name, fullPath: path } = to;
-    const title = to.meta?.title;
-    const icon = to.meta?.icon;
-    const keepAlive = to.meta?.keepAlive;
-    const tabItem = { name, path, title, icon, keepAlive }
-    console.log("tabStore.addTab:", tabItem)
-    tabStore.addTab(tabItem);
+    const { fullPath: path } = to;
+    if (rc(to.path)) {
+      const name = rc(to.path).code;
+      const title = rc(to.path).name;
+      const icon = rc(to.path).icon;
+      const keepAlive = rc(to.path).keepAlive;
+      const tabItem = { name, path, title, icon, keepAlive }
+      console.log("tabStore.addTab:", tabItem)
+      tabStore.addTab(tabItem);
+    }
   });
 
   router.onError(() => {

@@ -30,12 +30,12 @@ const emit = defineEmits(['update:show'])
 const tabStore = useTabStore()
 
 const options = computed(() => [
-  {
-    label: '重新加载',
-    key: 'reload',
-    disabled: props.currentPath !== tabStore.activeTab,
-    icon: () => h('i', { class: 'i-mdi:refresh text-14' }),
-  },
+  // {
+  //   label: '重新加载',
+  //   key: 'reload',
+  //   disabled: props.currentPath !== tabStore.activeTab,
+  //   icon: () => h('i', { class: 'i-mdi:refresh text-14' }),
+  // },
   {
     label: '关闭',
     key: 'close',
