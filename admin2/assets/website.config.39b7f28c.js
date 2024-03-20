@@ -1,0 +1,1 @@
+const e="/qiankun-template/admin2/assets/logo.1ea765ca.png",a="/qiankun-template/admin2/assets/account-logo.0a6f895e.png",n=Object.freeze({title:"NaiveUiAdmin",logo:e,loginImage:a,loginDesc:"Naive Ui Admin\u4E2D\u540E\u53F0\u524D\u7AEF/\u8BBE\u8BA1\u89E3\u51B3\u65B9\u6848"});export{n as w};
