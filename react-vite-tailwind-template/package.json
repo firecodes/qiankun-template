@@ -1,0 +1,63 @@
+{
+  "name": "vite-react-tailwind-starter",
+  "version": "0.1.0",
+  "private": true,
+  "author": "sozonome",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix && pnpm format",
+    "type-check": "tsc",
+    "check:turbo": "pnpm dlx turbo@latest lint type-check",
+    "format": "prettier --write src",
+    "up-interactive": "pnpm up -i",
+    "up-latest": "pnpm up-interactive -L",
+    "release": "standard-version",
+    "push-release": "git push --follow-tags origin main",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@fontsource/plus-jakarta-sans": "^5.0.19",
+    "clsx": "^2.1.0",
+    "lucide-react": "^0.358.0",
+    "million": "3.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^6.22.3",
+    "tailwind-merge": "^2.2.1"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^19.1.0",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/node": "^20.11.28",
+    "@types/react": "18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@types/react-helmet": "^6.1.11",
+    "@vitejs/plugin-react-swc": "^3.6.0",
+    "autoprefixer": "^10.4.18",
+    "commitlint": "^19.2.0",
+    "eslint": "^8.57.0",
+    "eslint-config-sznm": "^2.0.3",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "postcss": "^8.4.35",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.12",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "standard-version": "^9.5.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "5.4.2",
+    "vite": "^5.1.6",
+    "vite-plugin-checker": "^0.6.4",
+    "vite-plugin-pwa": "^0.19.4",
+    "vite-tsconfig-paths": "^4.3.2"
+  },
+  "engines": {
+    "node": ">=16.x.x",
+    "pnpm": ">=8"
+  }
+}
