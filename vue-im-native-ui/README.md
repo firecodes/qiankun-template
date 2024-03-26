@@ -19,6 +19,17 @@ yarn build
 yarn electron:build
 ```
 
+###### 修改 .env 配置信息
+
+```env
+VITE_BASE_API=http://127.0.0.1:9503
+VITE_SOCKET_API=ws://127.0.0.1:9504
+```
+# 学习资料
+https://im.gzydong.com/
+
+
+npm config set electron_mirror=https://npm.taobao.org/mirrors/electron/
 electron_mirror "https://cdn.npm.taobao.org/dist/electron/"
 electron_mirror=https://npm.taobao.org/mirrors/electron
 npm config set electron_mirror=https://npm.taobao.org/mirrors/electron/
