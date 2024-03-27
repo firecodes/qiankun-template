@@ -2,7 +2,6 @@
 ### 项目安装
 yarn config set electron_mirror https://cdn.npm.taobao.org/dist/electron/
 yarn add electron --save-dev
-
 ###### 下载安装
 ## 安装项目依赖扩展组件
 yarn install
