@@ -1,7 +1,3 @@
-## tiktokweb-electron
-> 抖音去水印视频下载客户端，支持windows、mac; 项目的思路来源于 [Johnserf-Seed/TikTokWeb](https://github.com/Johnserf-Seed/TikTokWeb), 很感谢 Johnserf-Seed 的开源, 让此项目可以诞生, 我也是偶然看到web版本的项目, 就想尝试一下, 也趁此机会练习一下 electron。
-
-[部署的 web 版](https://douyin-31xm.onrender.com/api?url=https://v.douyin.com/NKyY6Ch/)
 
 ## 使用
 需要设置cookie，cookie可以从web端抖音控制台获取。[如何在浏览器查看Cookie](https://blog.csdn.net/u011781521/article/details/87791125)
@@ -9,23 +5,23 @@
 ## 技术栈
 electron-vite + vue + naive-ui
 
-## 下载
+### 项目安装
+yarn config set electron_mirror https://cdn.npm.taobao.org/dist/electron/
+yarn add electron --save-dev
+###### 下载安装
+## 安装项目依赖扩展组件
+yarn install
 
-[release](https://github.com/Journey98/TikTokWeb-electron/releases)
+# 启动本地开发环境
+yarn dev
+# 启动本地开发环境桌面客户端
+yarn electron:dev
 
-## 打包 开发
+## 生产环境构建项目
+yarn build
 
-```bash
-npm install
-
-# 启动
-npm run dev
-
-# 打包 windows
-npm run build:win
-
-# 打包 mac
-npm run build:mac
+## 生产环境桌面客户端打包
+yarn electron:build
 ```
 
 ## 声明
