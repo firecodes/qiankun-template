@@ -1,7 +1,7 @@
 
 
 # qiankun-template 
-1. 访问<a href="//firecodes.github.io/qiankun-template/one/"> qiankun 项目模板DE</a> 查看效果 （//firecodes.github.io/qiankun-template/one/）
+1. 访问<a href="//firecodes.github.io/qiankun-template/"> qiankun 项目</a> 查看效果 （//firecodes.github.io/qiankun-template/）
 
 # 详细代码，看分支
 1. 访问 <a href="//github.com/firecodes/qiankun-template/tree/dev-vue3">  dev-vue3 分支代码</a>  (//github.com/firecodes/qiankun-template/tree/dev-vue3)
