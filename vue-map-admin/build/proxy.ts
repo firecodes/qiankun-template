@@ -2,15 +2,12 @@ import type { ProxyOptions } from 'vite'
 import { mapEntries } from 'radash'
 
 export function generateProxyPattern(envConfig: Record<string, string>) {
-  return mapEntries(envConfig, (key, value) => {
-    return [
-      key,
-      {
-        value,
-        proxy: `/proxy-${key}`,
-      },
-    ]
+  console.log("generateProxyPattern 1", envConfig)
+  const list = mapEntries(envConfig, (key, value) => {
+    return [key, { value, proxy: `/proxy-${key}`, }]
   })
+  console.log("generateProxyPattern 2", envConfig, list)
+  return list
 }
 
 /**

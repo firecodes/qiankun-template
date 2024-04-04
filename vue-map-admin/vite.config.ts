@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => {
   // 根据当前工作目录中的 `mode` 加载 .env 文件
   const env = loadEnv(mode, __dirname, '') as ImportMetaEnv
   const envConfig = serviceConfig[mode as ServiceEnvType]
-
+  console.log("env", env, envConfig)
   return {
     base: env.VITE_BASE_URL,
     plugins: createVitePlugins(env),
