@@ -2,6 +2,7 @@
 export const serviceConfig: Record<ServiceEnvType, Record<string, string>> = {
   dev: {
     url: 'https://mock.apifox.com/m1/4071143-0-default',
+    // url: 'http://localhost:3000',
   },
   test: {
     url: 'https://mock.apifox.com/m1/4071143-0-default',
