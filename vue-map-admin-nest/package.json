@@ -1,9 +1,8 @@
 {
-  "name": "nova-admin-nest",
+  "name": "ts-admin-nest",
   "version": "0.0.1",
   "description": "基于nestjs的基本后台管理系统",
-  "author": "Rock Chen",
-  "license": "MIT",
+  "author": "",
   "scripts": {
     "build": "nest build",
     "start": "cross-env NODE_ENV=dev nest start",
