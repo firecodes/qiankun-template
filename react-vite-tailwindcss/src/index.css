@@ -1,3 +1,144 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  body {
+    @apply text-neutral-400;
+  }
+
+  .btn-primary {
+    @apply bg-primary-300 hover:bg-primary-400 py-3 px-4 transition-colors font-semibold rounded text-white rounded-2 text-button;
+  }
+
+  .btn-primary_large {
+    @apply py-4 px-6;
+  }
+
+  .flex-center {
+    @apply justify-center items-center;
+  }
+
+  /* Shadows */
+  .sh-small {
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.04);
+  }
+
+  .sh-large {
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Backgrounds */
+  .bg-hero {
+    background-image: url('../public/images/bg-hero.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .bg-footer-cta {
+    background-image: url('../public/images/bg-footer-cta.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+
+  .bg-service-web-dev {
+    background-image: url('../public/images/service-bg-web.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .bg-service-mobile-dev {
+    background-image: url('../public/images/service-bg-mobile.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .bg-service-design {
+    background-image: url('../public/images/service-bg-design.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .bg-service-consulting {
+    background-image: url('../public/images/service-bg-consulting.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .bg-service-meteor {
+    background-image: url('../public/images/service-bg-meteor.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .bg-service-other {
+    background-image: url('../public/images/service-bg-other.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .bg-web-dev {
+    background: linear-gradient(
+      120deg,
+      #F87B8F 0%,
+      #ED5F92 50%,
+      #FD8282 100%
+    );
+  }
+
+  .bg-web-dev-shapes {
+    background-image: url('../public/images/illustration-web-dev-shapes.svg');
+    background-position: -121px -88px;
+    background-repeat: no-repeat;
+  }
+
+  .bg-mobile-dev {
+    background: linear-gradient(
+      120deg,
+      #B692D3 0%,
+      #C662BA 60%,
+      #C662BA 100%
+    );
+  }
+
+  .bg-mobile-dev-shapes {
+    background-image: url('../public/images/illustration-mobile-dev-shapes.svg');
+    background-position: 0 -46px;
+    background-repeat: no-repeat;
+  }
+
+  .bg-ui-ux {
+    background: linear-gradient(
+      120deg,
+      #42C2B5 0%,
+      #32C07C 50%,
+      #3BCAA3 100%
+    );
+  }
+
+  .bg-ui-ux-shapes {
+    background-image: url('../public/images/illustration-ui-ux-shapes.svg');
+    background-position: -191px -97px;
+    background-repeat: no-repeat;
+  }
+
+  .bg-consulting {
+    background: linear-gradient(
+      120deg,
+      #30A8BF 0%,
+      #247ED1 49.48%,
+      #2BB0CA 100%
+    );
+  }
+
+  .bg-consulting-shapes {
+    background-image: url('../public/images/illustration-web-dev-shapes.svg');
+    background-position: -121px -88px;
+    background-repeat: no-repeat;
+  }
+}
