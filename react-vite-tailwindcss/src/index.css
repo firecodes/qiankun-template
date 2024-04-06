@@ -35,49 +35,49 @@
 
   /* Backgrounds */
   .bg-hero {
-    background-image: url('../public/images/bg-hero.jpg');
+    background-image: url('./assets/images/bg-hero.jpg');
     background-position: center center;
     background-repeat: no-repeat;
   }
 
   .bg-footer-cta {
-    background-image: url('../public/images/bg-footer-cta.jpg');
+    background-image: url('./assets/images/bg-footer-cta.jpg');
     background-position: center top;
     background-repeat: no-repeat;
   }
 
   .bg-service-web-dev {
-    background-image: url('../public/images/service-bg-web.jpg');
+    background-image: url('./assets/images/service-bg-web.jpg');
     background-position: center center;
     background-repeat: no-repeat;
   }
 
   .bg-service-mobile-dev {
-    background-image: url('../public/images/service-bg-mobile.jpg');
+    background-image: url('./assets/images/service-bg-mobile.jpg');
     background-position: center center;
     background-repeat: no-repeat;
   }
 
   .bg-service-design {
-    background-image: url('../public/images/service-bg-design.jpg');
+    background-image: url('./assets/images/service-bg-design.jpg');
     background-position: center center;
     background-repeat: no-repeat;
   }
 
   .bg-service-consulting {
-    background-image: url('../public/images/service-bg-consulting.jpg');
+    background-image: url('./assets/images/service-bg-consulting.jpg');
     background-position: center center;
     background-repeat: no-repeat;
   }
 
   .bg-service-meteor {
-    background-image: url('../public/images/service-bg-meteor.jpg');
+    background-image: url('./assets/images/service-bg-meteor.jpg');
     background-position: center center;
     background-repeat: no-repeat;
   }
 
   .bg-service-other {
-    background-image: url('../public/images/service-bg-other.jpg');
+    background-image: url('./assets/images/service-bg-other.jpg');
     background-position: center center;
     background-repeat: no-repeat;
   }
@@ -92,7 +92,7 @@
   }
 
   .bg-web-dev-shapes {
-    background-image: url('../public/images/illustration-web-dev-shapes.svg');
+    background-image: url('./assets/images/illustration-web-dev-shapes.svg');
     background-position: -121px -88px;
     background-repeat: no-repeat;
   }
@@ -107,7 +107,7 @@
   }
 
   .bg-mobile-dev-shapes {
-    background-image: url('../public/images/illustration-mobile-dev-shapes.svg');
+    background-image: url('./assets/images/illustration-mobile-dev-shapes.svg');
     background-position: 0 -46px;
     background-repeat: no-repeat;
   }
@@ -122,7 +122,7 @@
   }
 
   .bg-ui-ux-shapes {
-    background-image: url('../public/images/illustration-ui-ux-shapes.svg');
+    background-image: url('./assets/images/illustration-ui-ux-shapes.svg');
     background-position: -191px -97px;
     background-repeat: no-repeat;
   }
@@ -137,7 +137,7 @@
   }
 
   .bg-consulting-shapes {
-    background-image: url('../public/images/illustration-web-dev-shapes.svg');
+    background-image: url('./assets/images/illustration-web-dev-shapes.svg');
     background-position: -121px -88px;
     background-repeat: no-repeat;
   }
