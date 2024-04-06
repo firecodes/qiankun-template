@@ -137,7 +137,7 @@ const Header = ({ toggleContactUs }) => {
               <img
                 className="block"
                 src="/images/logo-quave.svg"
-                alt="Quave Logo"
+                alt="Logo"
               /></div>
           </Link>
           <nav className="grow flex justify-end items-center">
