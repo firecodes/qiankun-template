@@ -12,9 +12,9 @@
     @apply text-neutral-400;
   }
 
-  .btn-primary {
+  /* .btn-primary {
     @apply bg-primary-300 hover:bg-primary-400 py-3 px-4 transition-colors font-semibold rounded text-white rounded-2 text-button;
-  }
+  } */
 
   .btn-primary_large {
     @apply py-4 px-6;
