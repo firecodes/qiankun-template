@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { RoutePaths } from '@/router/RoutePaths';
+import * as env from '@/utils/env';
 import {
   CloseOutlined,
   ArrowDownOutlined,
@@ -136,7 +137,7 @@ const Header = ({ toggleContactUs }) => {
             <div className="w-[160px]">
               <img
                 className="block"
-                src={'@/assets/images/logo-quave.svg'}
+                src={env.getPath('images/logo-quave.svg')}
                 alt="Logo"
               /></div>
           </Link>

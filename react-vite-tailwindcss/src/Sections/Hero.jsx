@@ -1,45 +1,46 @@
 import React from 'react';
+import * as env from '@/utils/env';
 
 const Hero = ({ toggleContactUs }) => {
   const links = [
     {
       title: 'React Logo',
-      src: '/images/logo-react.png',
+      src: env.getPath('images/logo-react.png'),
       className: 'max-w-[100px] lg:max-w-[135px]',
     },
     {
       title: 'Meteor Logo',
-      src: '/images/logo-meteor.png',
+      src: env.getPath('images/logo-meteor.png'),
       className: 'max-w-[100px] lg:max-w-[150px]',
     },
     {
       title: 'NodeJS Logo',
-      src: '/images/logo-node.png',
+      src: env.getPath('images/logo-node.png'),
       className: 'max-w-[75px] lg:max-w-[100px]',
     },
     {
       title: 'GraphQL Logo',
-      src: '/images/logo-graphQL.png',
+      src: env.getPath('images/logo-graphQL.png'),
       className: 'max-w-[130px] lg:max-w-[170px]',
     },
     {
       title: 'Kubernetes Logo',
-      src: '/images/logo-kubernetes.png',
+      src: env.getPath('images/logo-kubernetes.png'),
       className: 'max-w-[100px] lg:max-w-[140px]',
     },
     {
       title: 'Next Js Logo',
-      src: '/images/logo-next.png',
+      src: env.getPath('images/logo-next.png'),
       className: 'max-w-[100px] lg:max-w-[130px]',
     },
     {
       title: 'Flutter Logo',
-      src: '/images/logo-flutter.png',
+      src: env.getPath('images/logo-flutter.png'),
       className: 'max-w-[100px] lg:max-w-[143px]',
     },
     {
       title: 'zCloud Logo',
-      src: '/images/logo-zcloud.png',
+      src: env.getPath('images/logo-zcloud.png'),
       className: 'max-w-[100px] lg:max-w-[150px]',
     },
   ];

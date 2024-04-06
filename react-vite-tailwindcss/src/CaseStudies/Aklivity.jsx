@@ -1,5 +1,6 @@
 import React from 'react';
 import { RoutePaths } from '@/router/RoutePaths';
+import * as env from '@/utils/env';
 
 export const aklivityContent = {
   id: 'aklivity',

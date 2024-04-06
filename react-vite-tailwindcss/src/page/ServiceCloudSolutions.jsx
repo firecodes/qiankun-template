@@ -1,5 +1,6 @@
 import React from 'react';
 import { FeaturedCaseStudies } from '@/page/CaseStudies';
+import * as env from '@/utils/env';
 
 
 const webDevServices = [
