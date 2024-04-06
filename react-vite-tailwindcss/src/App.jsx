@@ -1,4 +1,4 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { ErrorBoundary } from 'react-error-boundary';
 
@@ -56,7 +56,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter history={browserHistory}>
+    <HashRouter history={browserHistory}>
       <Header toggleContactUs={toggleContactUs} />
       <ContactUs
         showContact={showContact}
@@ -67,7 +67,7 @@ function App() {
         <AppRoutes toggleContactUs={toggleContactUs} />
       </ErrorBoundary>
       <Footer toggleContactUs={toggleContactUs} />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

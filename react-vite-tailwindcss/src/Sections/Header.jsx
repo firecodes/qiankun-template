@@ -136,7 +136,7 @@ const Header = ({ toggleContactUs }) => {
             <div className="w-[160px]">
               <img
                 className="block"
-                src="/images/logo-quave.svg"
+                src={'@/assets/images/logo-quave.svg'}
                 alt="Logo"
               /></div>
           </Link>
