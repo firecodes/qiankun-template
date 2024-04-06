@@ -1,5 +1,6 @@
 import React from 'react';
 import { FeaturedCaseStudies } from '@/page/CaseStudies';
+import * as env from '@/utils/env';
 
 const webDevServices = [
   {
@@ -130,14 +131,14 @@ const WebDevService = ({ toggleContactUs }) => (
         </h5>
 
         <div className="flex flex-wrap items-center justify-center bg-neutral-900 gap-10 py-8 px-4 rounded-6 mt-4">
-          <img src="/images/service-logo-react.png" alt="React" />
-          <img src="/images/service-logo-meteor.png" alt="Meteor" />
-          <img src="/images/service-logo-node.png" alt="NodeJS" />
-          <img src="/images/service-logo-next.png" alt="Next" />
-          <img src="/images/service-logo-blaze.png" alt="Blaze" />
-          <img src="/images/service-logo-python.png" alt="Python" />
-          <img src="/images/service-logo-bun.png" alt="Bun" />
-          <img src="/images/service-logo-vue.png" alt="Vue" />
+          <img src={env.getPath('images/service-logo-react.png')} alt="React" />
+          <img src={env.getPath('images/service-logo-meteor.png')} alt="Meteor" />
+          <img src={env.getPath('images/service-logo-node.png')} alt="NodeJS" />
+          <img src={env.getPath('images/service-logo-next.png')} alt="Next" />
+          <img src={env.getPath('images/service-logo-blaze.png')} alt="Blaze" />
+          <img src={env.getPath('images/service-logo-python.png')} alt="Python" />
+          <img src={env.getPath('images/service-logo-bun.png')} alt="Bun" />
+          <img src={env.getPath('images/service-logo-vue.png')} alt="Vue" />
         </div>
       </div>
     </section>
