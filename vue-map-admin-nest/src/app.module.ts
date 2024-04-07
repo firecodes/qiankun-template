@@ -8,7 +8,6 @@ import { UserModule } from './modules/user/user.module'
 
 /* 辅助工具 */
 import { getEnvFilePath } from './utils/env'
-import { AuthModule } from './modules/auth/auth.module'
 import { RoleModule } from './modules/role/role.module'
 import { PermissionModule } from './modules/permission/permission.module'
 import { MenuModule } from './modules/menu/menu.module'
@@ -44,11 +43,10 @@ import configuration from './config/configuration'
       inject: [ConfigService],
     }),
     UserModule,
-    AuthModule,
     RoleModule,
     PermissionModule,
     MenuModule,
   ],
   controllers: [AppController],
 })
-export class AppModule {}
+export class AppModule { }

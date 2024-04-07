@@ -14,7 +14,7 @@ import { SearchQuery } from '@/common/dto/page.dto'
 
 @Controller('menu')
 export class MenuController {
-  constructor(private readonly menuService: MenuService) {}
+  constructor(private readonly menuService: MenuService) { }
 
   @Post('create')
   create(@Body() createMenuDto: CreateMenuDto) {
@@ -39,5 +39,10 @@ export class MenuController {
   @Delete(':id')
   remove(@Param('id') id: number) {
     return this.menuService.remove(+id)
+  }
+
+  @Post('test')
+  test(@Body() testParams) {
+    return this.menuService.test(testParams)
   }
 }

@@ -33,4 +33,4 @@ import { UserModule } from '@/modules/user/user.module'
     }),
   ],
 })
-export class AuthModule {}
+export class AuthModule { }

@@ -13,7 +13,7 @@ export class MenuService {
   constructor(
     @InjectRepository(Menu)
     private menuRepository: Repository<Menu>,
-  ) {}
+  ) { }
 
   async create(createMenuDto: CreateMenuDto) {
     const menuName = createMenuDto.menuName
@@ -72,5 +72,12 @@ export class MenuService {
 
     await this.menuRepository.delete(id)
     return '删除成功'
+  }
+
+  test(params) {
+    console.warn(
+      '🚀 ~ file: user.service.ts:109 ~ UserService ~ test ~ params:',
+      params,
+    )
   }
 }

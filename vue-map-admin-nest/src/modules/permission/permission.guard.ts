@@ -14,7 +14,7 @@ export class PermissionGuard implements CanActivate {
     private reflector: Reflector,
     private userServicese: UserService,
     private authService: AuthService,
-  ) {}
+  ) { }
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
     interface CusRequest extends Request {
