@@ -1,8 +1,7 @@
-const env = import.meta.env
 export const devMode = 'development'
 export const prodMode = 'production'
 export function getEnvObject(): any {
-  return env
+  return import.meta
 }
 export function getEnv(): any {
   return import.meta.env

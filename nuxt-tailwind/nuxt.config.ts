@@ -4,13 +4,16 @@ const define: any = {}
 Object.keys(process.env).forEach((name) => {
   define['process.env.' + name] = JSON.stringify(process.env[name])
 })
-console.log('nuxt rnv', process.env)
+console.log('nuxt rnv', define)
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   plugins: [
     '~/plugins/hello'
   ],
   rootDir: process.env.NUXT_PUBLIC_ROOT || './',
+  // baseURL: process.env.NUXT_APP_BASE_URL || './',
+  // buildAssetsDir: '/_nuxt/',
+  // cdnURL:  process.env.NUXT_APP_CDN_URL || './',
   extends: [process.env.NUXT_UI_PRO_PATH || '@nuxt/ui-pro'],
   modules: [
     '@nuxt/content',
@@ -34,8 +37,18 @@ export default defineNuxtConfig({
   },
   alias: {
     '@/': '/<rootDir>/',
-    img: fileURLToPath(new URL('./assets/img', import.meta.url))
+    img: fileURLToPath(new URL('./assets/img', import.meta.url)),
+
+    // '~': '/<srcDir>',
+    // '@': '/<srcDir>',
+    // '~~': '/<rootDir>',
+    // '@@': '/<rootDir>',
+    // assets: '/<srcDir>/assets',
+    // public: '/<srcDir>/public'
   },
+  // analyze: {
+  //   analyzerMode: 'static'
+  // },
   routeRules: {
     '/api/search.json': { prerender: true },
     '/docs': { redirect: '/docs/getting-started', prerender: false }
@@ -80,16 +93,20 @@ export default defineNuxtConfig({
   },
   ssr: true,
   // extractCSS: process.env.NODE_ENV === 'production',
-  // vite: {
-  //   define: {
-  //     ...define,
-  //   },
-  //   css: {
-  //     preprocessorOptions: {
-  //       scss: {
-  //         additionalData: '@use "~/assets/_colors.scss" as *;'
-  //       }
-  //     }
-  //   }
-  // }
+  vite: {
+    define: {
+      __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false,
+      'process.dev2': false,
+      'process.test2': false,
+      'import.meta.dev2': false,
+      'import.meta.test2': false
+    },
+    // css: {
+    //   preprocessorOptions: {
+    //     scss: {
+    //       additionalData: '@use "~/assets/_colors.scss" as *;'
+    //     }
+    //   }
+    // }
+  }
 })
