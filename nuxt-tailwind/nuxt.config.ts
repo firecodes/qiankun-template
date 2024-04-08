@@ -93,20 +93,20 @@ export default defineNuxtConfig({
   },
   ssr: true,
   // extractCSS: process.env.NODE_ENV === 'production',
-  vite: {
-    define: {
-      __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false,
-      'process.dev2': false,
-      'process.test2': false,
-      'import.meta.dev2': false,
-      'import.meta.test2': false
-    },
-    // css: {
-    //   preprocessorOptions: {
-    //     scss: {
-    //       additionalData: '@use "~/assets/_colors.scss" as *;'
-    //     }
-    //   }
-    // }
-  }
+  // vite: {
+  //   define: {
+  //     __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false,
+  //     'process.dev2': false,
+  //     'process.test2': false,
+  //     'import.meta.dev2': false,
+  //     'import.meta.test2': false
+  //   },
+  //   // css: {
+  //   //   preprocessorOptions: {
+  //   //     scss: {
+  //   //       additionalData: '@use "~/assets/_colors.scss" as *;'
+  //   //     }
+  //   //   }
+  //   // }
+  // }
 })
