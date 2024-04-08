@@ -1,40 +1,24 @@
-![nuxt-ui-saas-social-card](https://github.com/nuxt-ui-pro/saas/assets/739984/50bf4ddd-c4d5-47e5-a09e-0f699513dfb5)
 
 # Nuxt UI Pro - SaaS template
-
-[![Nuxt UI Pro](https://img.shields.io/badge/Made%20with-Nuxt%20UI%20Pro-00DC82?logo=nuxt.js&labelColor=020420)](https://ui.nuxt.com/pro)
-
 - [Live demo](https://saas-template.nuxt.dev/)
-- [Play on Stackblitz](https://stackblitz.com/github/nuxt-ui-pro/saas)
-- [Documentation](https://ui.nuxt.com/pro/getting-started)
 
-## Quick Start
 
-```bash [Terminal]
-npx nuxi init -t github:nuxt-ui-pro/saas
-```
 
 ## Setup
 
-Make sure to install the dependencies:
-
 ```bash
+# package
+npm i shikiji --save-dev
+
 # npm
-npm install
+npm install --force
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
 ## Development Server
 
 Start the development server on `http://localhost:3000`:
+tailwind css `http://localhost:3000/_tailwind/ `
 
 ```bash
 # npm
@@ -118,6 +102,3 @@ export default defineNuxtConfig({
 
 Read more on [Nuxt Studio docs](https://nuxt.studio/docs/projects/setup).
 
-## Renovate integration
-
-Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.

@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import * as utils from '@/utils'
 const colorMode = useColorMode()
 
 const color = computed(() => colorMode.value === 'dark' ? '#111827' : 'white')
+
+console.log('utils env', utils.evn.getEnv(), utils.evn.getEnvObject())
+console.log('env', process.env)
 
 useHead({
   meta: [
@@ -36,3 +40,16 @@ useSeoMeta({
     <UNotifications />
   </div>
 </template>
+<!-- <script>
+// Use a static import for server-side compatibility
+import '~/assets/css/main.css'
+// Caution: Dynamic imports are not server-side compatible
+import('~/assets/css/main.css')
+</script>
+
+<style>
+@import url("~/assets/css/main.css");
+</style> -->
+<!-- <template>
+  <img src="~/assets/img/nuxt.png" alt="Discover Nuxt 3" />
+</template> -->
