@@ -2,15 +2,7 @@
   <div class="wrap" ref="el" @mouseleave="handleMouseLeave">
     <div class="home" ref="home" :style="{ backgroundPosition: bgPosition }"></div>
     <div class="content" ref="content" :style="{ '--angle': computedAngle }">
-      <h1 class="title">小江大浪的个人空间</h1>
-      <p>昵称：小江大浪， 英文名：Gumplin Go</p>
-      <p>大学一本本科，毕业于2019年， 至今已经搬砖 {{ year }} 年了</p>
-      <p>自学编程的非科班前端开发，有一个全栈目标</p>
-      <p>熟悉Vue2， Vue3，了解Node(在学Nest.js)、React</p>
-      <p>间歇性奋发图强学习和健身，持续性看动漫、打王者</p>
-      <hr class="hr">
-      <p>Life is a fucking movie! 人生如戏，明天面对的的永远不知道是惊吓还是惊喜</p>
-      <p>人真的很渺小，顺势而为， 努力生活</p>
+      <h1 class="title">demo 界面</h1>
     </div>
   </div>
 
