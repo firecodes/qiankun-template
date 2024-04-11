@@ -12,10 +12,10 @@ useHead({
   htmlAttrs: {
     lang: 'zh-CN',
   },
-  title: '小江大浪',
-  titleTemplate: title => title !== '小江大浪' ? `${title} · 小江大浪` : title,
+  title: 'nuxt3-h5',
+  // titleTemplate: title => title !== 'nuxt3-h5' ? `${title} · nuxt3-h5` : title,
   meta: [
-    { name: 'description', content: '小江大浪的个人空间 ✨' },
+    { name: 'description', content: 'nuxt3-h5 ✨ description' },
   ],
   script: [
     { src: '/iconfont/iconfont.js' },
@@ -24,7 +24,9 @@ useHead({
 </script>
 
 <style>
-html, body , #__nuxt{
+html,
+body,
+#__nuxt {
   height: 100dvh;
   margin: 0;
   padding: 0;
