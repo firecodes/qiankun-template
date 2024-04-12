@@ -6,6 +6,9 @@
 .cache
 dist
 
+/test-results/
+/playwright-report/
+/playwright/.cache/
 # Node dependencies
 node_modules
 
