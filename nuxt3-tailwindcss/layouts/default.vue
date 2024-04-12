@@ -1,36 +1,39 @@
 <template>
-    <header>
-        <div class="container mx-auto d-flex items-start mt-10 justify-space-between">
-            <div class="mt-3"><span>{{ t('seo.brandName') }}</span></div>
+  <header>
+    <div class="container mx-auto d-flex items-start mt-10 justify-space-between">
+      <div class="mt-3">
+        <span>{{ t('seo.brandName') }}</span>
+      </div>
 
-            <div class="d-flex flex-row gap-3">
-                <div class="locale-select">
-                    <v-select v-model="locale" :items="languages" density="compact" variant="outlined"
-                        :label="$t('localization.language')" item-value="value" item-title="label"
-                        style="margin-top: 6px;" />
-                </div>
-                <Avatar v-if="store.isAuthenticated" />
-            </div>
+      <div class="d-flex flex-row gap-3">
+        <div class="locale-select">
+          <v-select v-model="locale" :items="languages" density="compact" variant="outlined"
+            :label="$t('localization.language')" item-value="value" item-title="label" style="margin-top: 6px;" />
         </div>
-    </header>
-    <slot />
+        <Avatar v-if="store.isAuthenticated" />
+      </div>
+    </div>
+  </header>
+  <slot />
 
-    <footer>
-        <div :class="{'container mx-auto my-10': true, 'text-end': store.isAuthenticated }">
-            <span class="text-secondary">
-                {{ t('footer.madeBy') }} <b class="text-primary"><NuxtLink href='https://github.com/Giuseppetm'>{{ t('footer.author') }}</NuxtLink></b>
-            </span>
-        </div>
-    </footer>
+  <footer>
+    <div :class="{ 'container mx-auto my-10': true, 'text-end': store.isAuthenticated }">
+      <span class="text-secondary">
+        {{ t('footer.madeBy') }} <b class="text-primary">
+          <NuxtLink href="https://github.com/Giuseppetm">{{ t('footer.author') }}</NuxtLink>
+        </b>
+      </span>
+    </div>
+  </footer>
 </template>
 
 <script setup lang="ts">
-const store = useStore();
+const store = useStore()
 
-const { locale, t } = useI18n();
+const { locale, t } = useI18n()
 
 const languages = computed(() => [
-    { value: 'it', label: t('localization.italian') },
-    { value: 'en', label: t('localization.english') }
-]);
+  { value: 'it', label: t('localization.italian') },
+  { value: 'en', label: t('localization.english') }
+])
 </script>

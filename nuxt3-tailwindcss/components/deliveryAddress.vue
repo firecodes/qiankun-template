@@ -2,7 +2,7 @@
   <v-dialog v-model="dialog" max-width="700">
     <v-card>
       <v-card-title class="d-flex justify-end">
-        <v-btn :icon="mdiClose" variant="text" @click="dialog = false"></v-btn>
+        <v-btn :icon="mdiClose" variant="text" @click="dialog = false" />
       </v-card-title>
 
       <v-card-text class="pb-10 pt-5">
@@ -23,38 +23,40 @@
             <v-text-field v-model="state.city" class="mb-1 md:mb-2"
               :error-messages="v$.city.$errors.map((e: any) => e.$message)"
               :label="t('header.deliveryAddress.form.city.value')"
-              :placeholder="t('header.deliveryAddress.form.city.placeholder')" variant="outlined"
-              @input="v$.city.$touch" @blur="v$.city.$touch" required />
+              :placeholder="t('header.deliveryAddress.form.city.placeholder')" variant="outlined" required
+              @input="v$.city.$touch" @blur="v$.city.$touch" />
             <v-text-field v-model="state.postalCode" type="number"
               :error-messages="v$.postalCode.$errors.map((e: any) => e.$message)"
               :label="t('header.deliveryAddress.form.postalCode.value')" class="mb-1 md:mb-2"
-              :placeholder="t('header.deliveryAddress.form.postalCode.placeholder')" variant="outlined"
-              @input="v$.postalCode.$touch" @blur="v$.postalCode.$touch" required />
+              :placeholder="t('header.deliveryAddress.form.postalCode.placeholder')" variant="outlined" required
+              @input="v$.postalCode.$touch" @blur="v$.postalCode.$touch" />
             <v-text-field v-model="state.address" :error-messages="v$.address.$errors.map((e: any) => e.$message)"
               class="mb-1 md:mb-2" :label="t('header.deliveryAddress.form.address.value')"
-              :placeholder="t('header.deliveryAddress.form.address.placeholder')" variant="outlined"
-              @input="v$.address.$touch" @blur="v$.address.$touch" required />
+              :placeholder="t('header.deliveryAddress.form.address.placeholder')" variant="outlined" required
+              @input="v$.address.$touch" @blur="v$.address.$touch" />
             <v-textarea v-model="state.note" :label="t('header.deliveryAddress.form.note.value')"
-              :placeholder="t('header.deliveryAddress.form.note.placeholder')" variant="outlined"
-              @input="v$.note.$touch" @blur="v$.note.$touch" required />
+              :placeholder="t('header.deliveryAddress.form.note.placeholder')" variant="outlined" required
+              @input="v$.note.$touch" @blur="v$.note.$touch" />
             <div class="d-flex justify-end">
               <v-btn :prepend-icon="mdiCheck" color="primary" :text="t('header.deliveryAddress.saveButton')"
-                @click="handleSave" :loading="loading" />
+                :loading="loading" @click="handleSave" />
             </div>
           </form>
         </div>
         <div v-else class="md:grid md:grid-cols-6 max-w-screen-xs m-auto">
           <v-list lines="two" class="md:col-span-3 col-span-6">
             <v-list-item :title="state.city">
-              <template v-slot:prepend>
+              <template #prepend>
                 <v-avatar color="orange">
                   <v-icon color="white" :icon="mdiHome" />
                 </v-avatar>
               </template>
 
-              <template v-slot:subtitle>
+              <template #subtitle>
                 {{ state.address }}
-                <template v-if="state.note">- {{ state.note }}</template>
+                <template v-if="state.note">
+                  - {{ state.note }}
+                </template>
               </template>
             </v-list-item>
           </v-list>
@@ -69,21 +71,21 @@
 </template>
 
 <script setup lang="ts">
-import { mdiCheck, mdiClose, mdiHome, mdiPencil } from '@mdi/js';
-import { useVuelidate } from '@vuelidate/core';
-import { helpers, minValue, required } from '@vuelidate/validators';
-import axios from 'axios';
+import { mdiCheck, mdiClose, mdiHome, mdiPencil } from '@mdi/js'
+import { useVuelidate } from '@vuelidate/core'
+import { helpers, minValue, required } from '@vuelidate/validators'
+import axios from 'axios'
 
-const { t } = useI18n();
-const store = useStore();
-const runtimeConfig = useRuntimeConfig();
+const { t } = useI18n()
+const store = useStore()
+const runtimeConfig = useRuntimeConfig()
 
 interface AddressFormState {
   address: string,
   city: string,
   postalCode?: number,
   note: string
-};
+}
 
 const rules = {
   city: { required: helpers.withMessage(t('header.deliveryAddress.form.city.required'), required) },
@@ -93,59 +95,59 @@ const rules = {
     minValue: helpers.withMessage(t('header.deliveryAddress.form.postalCode.valid'), minValue(0)),
   },
   note: { required: false }
-};
+}
 
 const initialState: AddressFormState = {
   city: store.deliveryAddress?.city ?? '',
   address: store.deliveryAddress?.address ?? '',
   postalCode: store.deliveryAddress?.postalCode,
   note: store.deliveryAddress?.note ?? '',
-};
+}
 
 const state = reactive<AddressFormState>({
   ...initialState,
-});
+})
 
-const v$ = useVuelidate<AddressFormState>(rules, state);
+const v$ = useVuelidate<AddressFormState>(rules, state)
 
-const dialog = ref(false);
-const loading = ref(false);
-const editMode = ref(false);
+const dialog = ref(false)
+const loading = ref(false)
+const editMode = ref(false)
 
 watch(
   () => dialog.value,
   (newValue) => {
     if (!newValue)
-      setTimeout(() => { editMode.value = false; }, 500);
+      setTimeout(() => { editMode.value = false }, 500)
   }
-);
+)
 
 const handleSave = () => {
   v$.value.$validate().then(async (res) => {
     if (res) {
-      loading.value = true;
+      loading.value = true
 
       try {
-        await axios.put(`${runtimeConfig.public.apiBase}/users/${store.user!.id}`, state);
+        await axios.put(`${runtimeConfig.public.apiBase}/users/${store.user!.id}`, state)
 
-        if (editMode) editMode.value = false;
-        store.setDeliveryAddress(state as Address);
-        emitter.emit(EventType.SNACKBAR_MESSAGE, { message: t('snackbar.success.deliveryAddress.edit'), type: Snackbar.SUCCESS });
+        if (editMode) editMode.value = false
+        store.setDeliveryAddress(state as Address)
+        emitter.emit(EventType.SNACKBAR_MESSAGE, { message: t('snackbar.success.deliveryAddress.edit'), type: Snackbar.SUCCESS })
       } catch (error) {
-        emitter.emit(EventType.SNACKBAR_MESSAGE, { message: t('snackbar.error.deliveryAddress.edit'), type: Snackbar.ERROR });
-        console.error('Error modifying delivery address:', error);
+        emitter.emit(EventType.SNACKBAR_MESSAGE, { message: t('snackbar.error.deliveryAddress.edit'), type: Snackbar.ERROR })
+        console.error('Error modifying delivery address:', error)
       } finally {
-        loading.value = false;
+        loading.value = false
       }
     }
-  });
-};
+  })
+}
 
 const handleEdit = () => {
-  editMode.value = true;
-};
+  editMode.value = true
+}
 
 emitter.on(EventType.OPEN_DELIVERY_ADDRESS, () => {
-  dialog.value = true;
-});
+  dialog.value = true
+})
 </script>
