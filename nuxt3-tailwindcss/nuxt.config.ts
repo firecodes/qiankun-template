@@ -1,6 +1,8 @@
-import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
+import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
+  // modules: ["@vueuse/nuxt", "@element-plus/nuxt", "@pinia/nuxt"],
+  // css: ["~/assets/css/style.css"],
   app: {
     head: {
       charset: 'utf-8',
@@ -17,6 +19,8 @@ export default defineNuxtConfig({
         config.plugins.push(vuetify({ autoImport: true }))
       })
     },
+    '@vueuse/nuxt',
+    '@element-plus/nuxt',
     '@pinia/nuxt',
     '@nuxt/image',
     '@nuxtjs/i18n'
@@ -33,7 +37,7 @@ export default defineNuxtConfig({
   // },
   pinia: {
     storesDirs: ['./stores/**'],
-  },  
+  },
   vite: {
     vue: {
       template: {
@@ -56,8 +60,8 @@ export default defineNuxtConfig({
     baseUrl: 'https://nuxt-sample.netlify.app',
     defaultLocale: 'en',
   },
-  devtools: { 
-    enabled: true 
+  devtools: {
+    enabled: true
   },
   typescript: {
     typeCheck: true
@@ -72,7 +76,7 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
-    public: { 
+    public: {
       apiBase: 'https://dummyjson.com'
     }
   }
