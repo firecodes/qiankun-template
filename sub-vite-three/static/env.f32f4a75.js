@@ -1,0 +1,1 @@
+const e={VITE_USE_HASH:"false",VITE_PUBLIC_PATH:"/qiankun-template/sub-vite-three/",BASE_URL:"/qiankun-template/sub-vite-three/",MODE:"production",DEV:!1,PROD:!0};function n(){return e.VITE_PUBLIC_PATH}function u(t=""){return`${n()}${t}`}export{u as g};
