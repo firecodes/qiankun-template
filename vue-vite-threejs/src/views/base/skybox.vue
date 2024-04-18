@@ -5,6 +5,7 @@
 import * as THREE from 'three'
 import { onMounted, ref } from 'vue';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import * as env from '@/utils/env';
 
 const screenDom = ref(null)
 const scene = new THREE.Scene()
@@ -46,7 +47,7 @@ const init = () => {
 
   // 天空盒材质
   const loader = new THREE.TextureLoader()
-  const texture = loader.load("/images/panorama.jpg", () => {
+  const texture = loader.load(env.getPath('images/panorama.jpg'), () => {
     const rt = new THREE.WebGLCubeRenderTarget(texture.image.height);
     rt.fromEquirectangularTexture(renderer, texture);
     scene.background = rt.texture;

@@ -6,6 +6,7 @@ import * as THREE from 'three'
 import { onMounted, ref } from 'vue';
 import gsap from "gsap"
 import * as dat from "dat.gui"
+import * as env from '@/utils/env';
 
 const screenDom = ref(null)
 const scene = new THREE.Scene()
@@ -43,7 +44,7 @@ const init = () => {
 
   // 贴纹理
   const textureLoader = new THREE.TextureLoader()
-  const loaderTexture = textureLoader.load("/images/wall.jpg")
+  const loaderTexture = textureLoader.load(env.getPath('images/wall.jpg'))
   // 以图片中心旋转45度
   loaderTexture.center.set(0.5, 0.5)
   loaderTexture.rotation = Math.PI / 4

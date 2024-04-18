@@ -10,6 +10,7 @@ import { Water } from "three/examples/jsm/objects/Water2"
 // 模型解压
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader"
 import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
+import * as env from '@/utils/env';
 
 
 // 场景
@@ -56,7 +57,7 @@ onMounted(() => {
 
 // 创建天空球体
 const skyGeo = new THREE.SphereGeometry(1000, 60, 60);
-const skyTex = new THREE.TextureLoader().load("/images/sky.jpg")
+const skyTex = new THREE.TextureLoader().load(env.getPath('images/sky.jpg'))
 const skyMat = new THREE.MeshBasicMaterial({
   map: skyTex
 })
@@ -69,7 +70,7 @@ scene.add(sky)
 // 视频纹理
 const createVideo = () => {
   const video = document.createElement("video");
-  video.src = "/video/sky.mp4"
+  video.src = env.getPath('video/sky.mp4')
   video.loop = true
   window.addEventListener("click", (e) => {
     if (video.paused) {
@@ -84,7 +85,7 @@ const createVideo = () => {
 
 // 载入环境纹理
 const hdrLoader = new RGBELoader()
-hdrLoader.loadAsync("/hdr/050.hdr").then((texture) => {
+hdrLoader.loadAsync(env.getPath('hdr/050.hdr')).then((texture) => {
   texture.mapping = THREE.EquirectangularReflectionMapping;
   scene.background = texture
   scene.environment = texture
@@ -104,8 +105,8 @@ const waterMat = new Water(waterGeo, {
   color: 0xeeeeff,
   flowDirection: new THREE.Vector2(1, 1),
   scale: 2,
-  normalMap0: waterTexLoader.load("/images/Water_1_M_Normal.jpg"),
-  normalMap1: waterTexLoader.load("/images/Water_2_M_Normal.jpg"),
+  normalMap0: waterTexLoader.load(env.getPath('images/Water_1_M_Normal.jpg')),
+  normalMap1: waterTexLoader.load(env.getPath('images/Water_2_M_Normal.jpg')),
 })
 // 水平面抬高3米淹没石头
 waterMat.position.y = 3;
@@ -117,10 +118,10 @@ scene.add(waterMat)
 const loader = new GLTFLoader();
 const dracoLoader = new DRACOLoader();
 // 添加draco载入库
-dracoLoader.setDecoderPath("/js/draco/")
+dracoLoader.setDecoderPath(env.getPath('js/draco/'))
 loader.setDRACOLoader(dracoLoader)
 
-loader.load("/glb/island2.glb", (gltf) => {
+loader.load(env.getPath('glb/island2.glb'), (gltf) => {
   const isLand = gltf.scene
   // isLand.position.y = -50;
   scene.add(isLand)

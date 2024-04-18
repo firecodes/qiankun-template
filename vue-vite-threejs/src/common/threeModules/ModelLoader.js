@@ -3,6 +3,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
 import DsModel from './DsModel'
+import * as env from '@/utils/env';
 
 /**
  * 模型加载类（只能加载GLTF及GLB格式）
@@ -14,7 +15,7 @@ export default class ModelLoader {
     this.loaderGLTF = new GLTFLoader() // 加载gltf模型
     this.loaderFBX = new FBXLoader() // 加载fbx模型
     this.dracoLoader = new DRACOLoader() // 加载draco模型(加载基于Google Draco压缩格式的3D模型的类)
-    this.dracoLoader.setDecoderPath('/js/draco/') // 设置draco模型解码器路径
+    this.dracoLoader.setDecoderPath(env.getPath('js/draco/')) // 设置draco模型解码器路径
     this.loaderGLTF.setDRACOLoader(this.dracoLoader) // 设置draco模型加载器
   }
   /**

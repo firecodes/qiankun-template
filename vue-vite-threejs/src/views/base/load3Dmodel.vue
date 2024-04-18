@@ -7,6 +7,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
 import { onMounted, ref } from 'vue';
+import * as env from '@/utils/env';
 
 const screenDom = ref(null)
 const scene = new THREE.Scene()
@@ -19,14 +20,14 @@ const init = () => {
   const camera = new THREE.PerspectiveCamera(45, screenDom.value.clientWidth / screenDom.value.clientHeight, 0.25, 20)
   camera.position.set(- 1.8, 0.6, 2.7);
 
-  new RGBELoader().setPath("/textures/").load("royal_esplanade_1k.hdr", (texture) => {
+  new RGBELoader().setPath(env.getPath('textures/')).load("royal_esplanade_1k.hdr", (texture) => {
     texture.mapping = THREE.EquirectangularReflectionMapping;
     scene.background = texture;
     scene.environment = texture;
     renderer.render(scene, camera)
 
     // model
-    const loader = new GLTFLoader().setPath("/glTF/");
+    const loader = new GLTFLoader().setPath(env.getPath('glTF/'));
     loader.load("DamagedHelmet.gltf", (gltf) => {
       scene.add(gltf.scene)
       renderer.render(scene, camera)

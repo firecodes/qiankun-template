@@ -4,6 +4,7 @@
 <script setup>
 import * as THREE from 'three'
 import { onMounted, ref } from 'vue';
+import * as env from '@/utils/env';
 
 const screenDom = ref(null)
 const scene = new THREE.Scene()

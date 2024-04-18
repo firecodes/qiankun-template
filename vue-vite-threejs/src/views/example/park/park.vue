@@ -22,7 +22,7 @@ import ModelLoader from '@/common/threeModules/ModelLoader'
 import Labels from '@/common/threeModules/Labels'
 import { Water } from 'three/examples/jsm/objects/Water2'
 import * as BufferGeometryUtils from 'three/addons/utils/BufferGeometryUtils.js'
-
+import * as env from '@/utils/env';
 import gsap from 'gsap'
 
 let viewer = null
@@ -161,14 +161,14 @@ const onChangeTime = () => {
  */
 const initVideoTexture = () => {
   const video = document.getElementById('videoContainer')
-  video.src = '/video/bi.mp4'
+  video.src = env.getPath('video/bi.mp4')
   video.autoplay = 'autoplay'
   video.loop = 'loop'
   video.muted = 'muted'
   videoTextTure = new THREE.VideoTexture(video)
 }
 
-/**
+/**.
  * 加载聚光灯
  */
 const initSpotLight = (x, y, z) => {
@@ -194,7 +194,7 @@ const initSpotLight = (x, y, z) => {
  * 加载人
  */
 const loadPeople = () => {
-  modelLoader.loadModelToScene('/glb/ren.glb', (model) => {
+  modelLoader.loadModelToScene(env.getPath('glb/ren.glb'), (model) => {
     model.openCastShadow()
     model.object.position.set(13, 0, 15)
     model.object.name = '人'
@@ -206,7 +206,7 @@ const loadPeople = () => {
  * 加载路灯
  */
 const loadLamp = () => {
-  modelLoader.loadModelToScene('/glb/lightpostDouble.glb', (model) => {
+  modelLoader.loadModelToScene(env.getPath('glb/lightpostDouble.glb'), (model) => {
     model.openCastShadow()
     model.object.position.set(23, 0, 29)
     model.object.scale.set(1, 3, 1)
@@ -224,7 +224,7 @@ const loadLamp = () => {
  */
 const initFence = () => {
   modelLoader.loadModelToScene(
-    '/glb/city-v1.glb',
+    env.getPath('glb/city-v1.glb'),
     (model) => {
       model.object.name = 'cityv1'
       model.openCastShadow() // 开启投射阴影
@@ -267,7 +267,7 @@ const initFence = () => {
  * 加载广告牌
  */
 const loadBillBoard = () => {
-  modelLoader.loadModelToScene('/glb/billboard.glb', (model) => {
+  modelLoader.loadModelToScene(env.getPath('glb/billboard.glb'), (model) => {
     model.openCastShadow() // 开启投射阴影
     // model.openReceiveShadow()
     model.object.position.set(4, -20, -35)
@@ -287,7 +287,7 @@ const loadBillBoard = () => {
  * 加载办公大厅
  */
 const loadOfficeBuild = () => {
-  modelLoader.loadModelToScene('/glb/officeBuild.glb', (model) => {
+  modelLoader.loadModelToScene(env.getPath('glb/officeBuild.glb'), (model) => {
     // console.log('----model----', model)
     officeBuild = model
     officeBuild.openCastShadow()
@@ -574,7 +574,7 @@ const selectOffice = (model) => {
  * 加载实验楼
  */
 const loadLaboratoryBuild = () => {
-  modelLoader.loadModelToScene('/glTF/laboratoryBuild.gltf', (model) => {
+  modelLoader.loadModelToScene(env.getPath('glTF/laboratoryBuild.gltf'), (model) => {
     // 合批
     const geometryArr = []
     const materialArr = []
@@ -630,7 +630,7 @@ const loadLaboratoryBuild = () => {
  * 加载车辆
  */
 const loadCar = () => {
-  modelLoader.loadModelToScene('/glTF/car13.gltf', (model) => {
+  modelLoader.loadModelToScene(env.getPath('glTF/car13.gltf'), (model) => {
     car = model
     model.openCastShadow()
     model.openReceiveShadow()
@@ -687,7 +687,7 @@ const loadTree = () => {
  * 加载水池
  */
 const loadSwimmingPool = () => {
-  modelLoader.loadModelToScene('/glb/pool.glb', (model) => {
+  modelLoader.loadModelToScene(env.getPath('glb/pool.glb'), (model) => {
     model.openCastShadow()
     model.openReceiveShadow()
     model.object.position.set(12, 1, -16)
@@ -702,8 +702,8 @@ const loadSwimmingPool = () => {
       color: 0xeeeeff,
       flowDirection: new THREE.Vector2(1, 1),
       scale: 1,
-      normalMap0: waterTexLoader.load('/images/Water_1_M_Normal.jpg'),
-      normalMap1: waterTexLoader.load('/images/Water_2_M_Normal.jpg')
+      normalMap0: waterTexLoader.load(env.getPath('images/Water_1_M_Normal.jpg')),
+      normalMap1: waterTexLoader.load(env.getPath('images/Water_2_M_Normal.jpg'))
     })
     waterMesh.name = '动态水'
     oldWater.remove(oldWater.children[0])

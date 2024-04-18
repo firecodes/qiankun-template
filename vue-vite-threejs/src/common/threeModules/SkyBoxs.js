@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import * as env from '@/utils/env';
 
 // 天空盒时间类型
 const skyboxType = {
@@ -17,12 +18,12 @@ export default class SkyBoxs {
   setSkybox(type = skyboxType.day) {
     const loaderbox = new THREE.CubeTextureLoader() // 加载贴图
     const cubeTexture = loaderbox.load([
-      `/images/skybox/${type}/posx.jpg`,
-      `/images/skybox/${type}/negx.jpg`,
-      `/images/skybox/${type}/posy.jpg`,
-      `/images/skybox/${type}/negy.jpg`,
-      `/images/skybox/${type}/posz.jpg`,
-      `/images/skybox/${type}/negz.jpg`
+      env.getPath(`images/skybox/${type}/posx.jpg`),
+      env.getPath(`images/skybox/${type}/negx.jpg`),
+      env.getPath(`images/skybox/${type}/posy.jpg`),
+      env.getPath(`images/skybox/${type}/negy.jpg`),
+      env.getPath(`images/skybox/${type}/posz.jpg`),
+      env.getPath(`images/skybox/${type}/negz.jpg`)
     ])
     this.viewer.scene.background = cubeTexture
   }

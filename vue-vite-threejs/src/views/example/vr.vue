@@ -6,6 +6,7 @@ import { onMounted, ref } from 'vue'
 import * as THREE from "three"
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
+import * as env from '@/utils/env';
 
 // 场景
 const scene = new THREE.Scene();
@@ -63,7 +64,7 @@ const render = () => {
 // 添加球
 const globeGeo = new THREE.SphereGeometry(5, 32, 32)
 const loader = new RGBELoader();
-loader.load("/textures/Living.hdr", (texture) => {
+loader.load(env.getPath('textures/Living.hdr'), (texture) => {
   const material = new THREE.MeshBasicMaterial({
     map: texture
   })
