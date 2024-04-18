@@ -1,10 +1,4 @@
-/*
- * @Description: 
- * @Author: 笙痞77
- * @Date: 2023-08-28 16:43:52
- * @LastEditors: 笙痞77
- * @LastEditTime: 2023-09-01 13:57:20
- */
+
 import { Cache, WebGLRenderer, PerspectiveCamera, Scene, Color, AxesHelper } from "three"
 import { CSS2DRenderer } from "three/examples/jsm/renderers/CSS2DRenderer" // 二维标签渲染器
 import { CSS3DRenderer } from "three/examples/jsm/renderers/CSS3DRenderer" // 三维标签渲染器

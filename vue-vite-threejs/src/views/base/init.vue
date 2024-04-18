@@ -1,10 +1,3 @@
-<!--
- * @Description: 
- * @Author: 笙痞77
- * @Date: 2023-05-05 10:20:56
- * @LastEditors: 笙痞77
- * @LastEditTime: 2023-07-20 14:29:49
--->
 <template>
   <div id="three-dom" ref="screenDom"></div>
 </template>

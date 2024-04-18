@@ -1,10 +1,4 @@
-/*
- * @Description: 
- * @Author: 笙痞77
- * @Date: 2023-08-28 18:46:05
- * @LastEditors: 笙痞77
- * @LastEditTime: 2023-09-04 17:25:28
- */
+
 import * as THREE from 'three'
 
 /**

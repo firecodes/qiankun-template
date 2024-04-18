@@ -1,10 +1,3 @@
-<!--
- * @Description: 
- * @Author: 笙痞77
- * @Date: 2023-08-28 16:06:00
- * @LastEditors: 笙痞77
- * @LastEditTime: 2023-11-01 11:07:42
--->
 <template>
   <div id="jindu-text-con" v-if="progressBarShow">
     正在加载模型请稍等：<span id="jindu-text">{{ progressText }}</span>
@@ -565,7 +558,7 @@ const selectOffice = (model) => {
     z: -5,
     duration: 2,
     ease: 'power1.inOut',
-    onComplete: () => {}
+    onComplete: () => { }
   })
   // gsap.to(viewer.camera.position, {
   //   x: 12,

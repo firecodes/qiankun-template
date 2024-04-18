@@ -1,10 +1,3 @@
-<!--
- * @Description: 
- * @Author: 笙痞77
- * @Date: 2023-07-21 11:19:23
- * @LastEditors: 笙痞77
- * @LastEditTime: 2023-07-21 14:04:21
--->
 <template>
   <div class="container" ref="container"></div>
 </template>

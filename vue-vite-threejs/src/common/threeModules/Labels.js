@@ -1,10 +1,4 @@
-/*
- * @Description: 
- * @Author: 笙痞77
- * @Date: 2023-08-30 14:03:47
- * @LastEditors: 笙痞77
- * @LastEditTime: 2023-08-30 15:25:31
- */
+
 import { InteractiveGroup } from "three/examples/jsm/interactive/InteractiveGroup"
 import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer'
 

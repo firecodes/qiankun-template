@@ -1,10 +1,3 @@
-<!--
- * @Description: 三亚小岛
- * @Author: 笙痞77
- * @Date: 2023-07-21 14:04:02
- * @LastEditors: 笙痞77
- * @LastEditTime: 2023-07-21 16:20:36
--->
 <template>
   <div class="container" ref="container"></div>
 </template>

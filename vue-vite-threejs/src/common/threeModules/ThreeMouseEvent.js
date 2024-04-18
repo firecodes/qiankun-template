@@ -1,10 +1,4 @@
-/*
- * @Description: 
- * @Author: 笙痞77
- * @Date: 2023-08-31 11:20:09
- * @LastEditors: 笙痞77
- * @LastEditTime: 2023-08-31 16:18:55
- */
+
 import * as THREE from 'three'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
 
