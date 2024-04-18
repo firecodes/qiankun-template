@@ -26,6 +26,7 @@
     "prettier": "^2.8.8",
     "proton-engine": "^5.4.5",
     "raf-manager": "^0.3.0",
+    "vite-plugin-qiankun": "^1.0.15",
     "unplugin-auto-import": "^0.11.2",
     "unplugin-vue-components": "^0.22.4",
     "vite": "^3.0.7",
